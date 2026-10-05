@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Assignment entity within the Assignments bounded context.
  * Links a student to a route, vehicle and driver for a specific shift.
  *

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Trip entity within the Trips bounded context.
  * Represents a single operational trip in the school transport service.
  *

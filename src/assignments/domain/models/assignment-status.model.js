@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Enum-like constants for the Assignments bounded context.
  */
 

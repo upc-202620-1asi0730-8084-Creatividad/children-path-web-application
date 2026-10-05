@@ -1,4 +1,4 @@
-const notificationCenter = () => import('./views/notification-center.vue');
+﻿const notificationCenter = () => import('./views/notification-center.vue');
 
 const notificationsRoutes = [
     {

@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+﻿import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { AssignmentApi } from '../infrastructure/assignment-api.js';
 import { AssignmentAssembler } from '../infrastructure/assignment.assembler.js';
@@ -171,14 +171,17 @@ const useAssignmentStore = defineStore('assignment', () => {
     }
 
     return {
+        // state
         dashboard,
         loading,
         errors,
         selectedStatus,
         selectedShift,
         searchTerm,
+        // computed
         assignments,
         filteredAssignments,
+        // actions
         fetchDashboard,
         updateSearch,
         selectStatus,

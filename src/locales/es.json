@@ -6,7 +6,8 @@
   "layout": {
     "coreModules": "Módulos principales",
     "signOut": "Cerrar sesión",
-    "homeAria": "Ir al inicio"
+    "homeAria": "Ir al inicio",
+    "currentModule": "Módulo actual"
   },
   "actions": {
     "toggleMenu": "Alternar menú de navegación",
@@ -65,5 +66,1358 @@
     "intro": "Hecho con",
     "use": "utilizando",
     "author": "por el Equipo de Desarrollo de {brand}"
+  },
+  "page-not-found": {
+      "title": "Página no encontrada",
+      "content": "La ruta {unavailable-route} no está disponible.",
+      "go-home": "Ir al inicio"
+  },
+  "fleet": {
+    "eyebrow": "Gestión de Flota",
+    "title": "Mantén cada unidad lista para la ruta",
+    "subtitle": "Monitorea disponibilidad, uso de capacidad y estado de mantenimiento de toda tu flota de transporte escolar.",
+    "heroAvailability": "Disponibilidad de flota",
+    "actions": {
+      "registerVehicle": "Registrar vehículo",
+      "export": "Exportar lista"
+    },
+    "kpis": {
+      "totalVehicles": "Vehículos totales",
+      "registeredUnits": "Unidades registradas",
+      "availableVehicles": "Disponibles",
+      "readyForService": "Listos para servicio",
+      "onRouteVehicles": "En ruta",
+      "activeRoutes": "Rutas activas",
+      "maintenanceVehicles": "En mantenimiento",
+      "requiresReview": "Requieren revisión",
+      "capacityUsage": "Uso de capacidad",
+      "studentCapacity": "De la capacidad total"
+    },
+    "filters": {
+      "all": "Todos",
+      "available": "Disponibles",
+      "onRoute": "En ruta",
+      "maintenance": "Mantenimiento",
+      "inactive": "Inactivos",
+      "searchPlaceholder": "Buscar por placa, conductor, ruta..."
+    },
+    "status": {
+      "available": "Disponible",
+      "onRoute": "En ruta",
+      "maintenance": "Mantenimiento",
+      "inactive": "Inactivo"
+    },
+    "priority": {
+      "low": "Baja",
+      "medium": "Media",
+      "high": "Alta"
+    },
+    "inventory": {
+      "eyebrow": "Inventario",
+      "title": "Registro de vehículos"
+    },
+    "availability": {
+      "eyebrow": "Disponibilidad",
+      "title": "Preparación de flota",
+      "ready": "Listo"
+    },
+    "maintenance": {
+      "eyebrow": "Mantenimiento",
+      "title": "Alertas",
+      "items": "ítems",
+      "due": "vence"
+    },
+    "vehicle": {
+      "capacityUsage": "Uso de capacidad",
+      "nextMaintenance": "Próximo mantenimiento",
+      "documentsValid": "Documentos vigentes",
+      "documentsPending": "Documentos pendientes"
+    },
+    "empty": {
+      "title": "No se encontraron vehículos",
+      "message": "Ajusta los filtros o el término de búsqueda."
+    },
+    "table": {
+      "eyebrow": "Registro",
+      "title": "Todas las unidades",
+      "vehicle": "Vehículo",
+      "driver": "Conductor",
+      "route": "Ruta",
+      "capacity": "Capacidad",
+      "status": "Estado",
+      "inspection": "Última inspección",
+      "actions": "Acciones"
+    },
+    "dialog": {
+      "registerTitle": "Nuevo vehículo",
+      "detailTitle": "Detalle del vehículo",
+      "code": "Código",
+      "plate": "Placa",
+      "brand": "Marca",
+      "model": "Modelo",
+      "year": "Año",
+      "capacity": "Capacidad",
+      "driver": "Conductor",
+      "route": "Ruta",
+      "status": "Estado",
+      "mileage": "Kilometraje",
+      "availability": "Puntaje disponibilidad",
+      "lastInspection": "Última inspección",
+      "nextMaintenance": "Próximo mantenimiento",
+      "create": "Crear"
+    }
+  },
+  "shared": {
+    "cancel": "Cancelar",
+    "close": "Cerrar"
+  },
+  "analyticsBc": {
+    "hero": {
+      "eyebrow": "Monitoreo y Analítica",
+      "title": "Descubre cómo rinde cada ruta",
+      "subtitle": "Inteligencia operativa unificada sobre viajes, asistencia, incidencias y preparación de flota.",
+      "score": "Puntaje de calidad"
+    },
+    "metrics": {
+      "totalTrips": "Viajes totales",
+      "totalTripsHint": "Día operativo actual",
+      "attendance": "Asistencia",
+      "attendanceHint": "Confirmado por apoderados",
+      "delay": "Retraso promedio",
+      "delayHint": "En rutas monitoreadas",
+      "fleetUsage": "Uso de flota",
+      "fleetUsageHint": "Utilización de capacidad",
+      "incidentRate": "Tasa de incidencias",
+      "incidentRateHint": "Bajo el umbral de seguridad"
+    },
+    "banner": {
+      "title": "Monitoreo operativo en vivo",
+      "message": "Los indicadores se actualizan desde tracking, viajes y asistencia."
+    },
+    "actions": {
+      "refresh": "Refrescar",
+      "export": "Exportar CSV",
+      "generate": "Generar reporte",
+      "filterSimilar": "Filtrar rutas similares"
+    },
+    "sections": {
+      "monitoringEyebrow": "Monitoreo",
+      "monitoringTitle": "Indicadores en vivo",
+      "analyticsEyebrow": "Analítica",
+      "qualityTitle": "Puntaje de calidad",
+      "routeEyebrow": "Rendimiento de rutas",
+      "routeTitle": "Rutas monitoreadas",
+      "selectedEyebrow": "Seleccionada",
+      "selectedTitle": "Detalle de ruta",
+      "insightEyebrow": "Insights",
+      "insightTitle": "Acciones sugeridas",
+      "trendEyebrow": "Tendencia",
+      "trendTitle": "Rendimiento semanal",
+      "reportsEyebrow": "Reportes",
+      "reportsTitle": "Reportes generados",
+      "activityEyebrow": "Actividad",
+      "activityTitle": "Actividad reciente"
+    },
+    "labels": {
+      "updated": "Actualizado",
+      "safeService": "Servicio seguro",
+      "monitoring": "Monitoreo",
+      "analytics": "Analítica",
+      "reports": "Reportes",
+      "items": "ítems",
+      "onTime": "Puntualidad",
+      "attendance": "Asistencia",
+      "score": "Puntaje",
+      "delay": "Retraso",
+      "currentWeek": "Semana actual",
+      "today": "Hoy"
+    },
+    "filters": {
+      "search": "Buscar por ruta, conductor o placa...",
+      "allRoutes": "Todas las rutas"
+    },
+    "status": {
+      "healthy": "Saludable",
+      "attention": "Atención",
+      "risk": "Riesgo"
+    },
+    "detail": {
+      "vehicle": "Vehículo",
+      "completedTrips": "Viajes completados",
+      "delayMinutes": "Minutos de retraso",
+      "incidents": "Incidentes",
+      "serviceScore": "Puntaje de servicio"
+    },
+    "empty": {
+      "title": "No hay rutas que coincidan",
+      "message": "Ajusta los filtros o el término de búsqueda."
+    },
+    "table": {
+      "report": "Reporte",
+      "period": "Período",
+      "records": "Registros",
+      "status": "Estado",
+      "generated": "Generado",
+      "actions": "Acciones"
+    },
+    "reports": {
+      "all": "Todos",
+      "fleet": "Flota",
+      "trip": "Viajes",
+      "attendance": "Asistencia",
+      "incident": "Incidentes",
+      "quality": "Calidad"
+    }
+  },
+  "assignments": {
+    "hero": {
+      "eyebrow": "Gestión de Asignaciones",
+      "title": "Asigna cada estudiante a la ruta correcta",
+      "subtitle": "Valida ruta, vehículo y conductor antes de cada día de servicio.",
+      "readiness": "Preparación de asignaciones"
+    },
+    "metrics": {
+      "total": "Asignaciones totales",
+      "totalDescription": "Estudiantes registrados",
+      "validated": "Validadas",
+      "validatedDescription": "Listas para servicio",
+      "pending": "Pendientes",
+      "pendingDescription": "Esperando validación",
+      "conflicts": "Conflictos",
+      "conflictsDescription": "Requieren resolución",
+      "capacity": "Capacidad promedio",
+      "capacityDescription": "Uso de flota"
+    },
+    "banner": {
+      "title": "Asignaciones que requieren atención",
+      "description": "Hay asignaciones pendientes y en conflicto que necesitan revisión antes del próximo día de servicio.",
+      "action": "Revisar conflictos"
+    },
+    "roster": {
+      "eyebrow": "Lista de estudiantes",
+      "title": "Asignaciones actuales"
+    },
+    "actions": {
+      "new": "Nueva asignación",
+      "edit": "Editar",
+      "view": "Ver",
+      "export": "Exportar"
+    },
+    "filters": {
+      "search": "Buscar por estudiante, ruta, placa...",
+      "allStatuses": "Todos los estados",
+      "allShifts": "Todos los turnos"
+    },
+    "card": {
+      "pickupPoint": "Punto de recojo",
+      "pickupWindow": "Ventana de recojo",
+      "validation": "Validación",
+      "validationScore": "Puntaje de validación",
+      "ready": "Listo para servicio",
+      "needsReview": "Necesita revisión"
+    },
+    "readiness": {
+      "eyebrow": "Preparación",
+      "title": "Preparación de asignaciones",
+      "caption": "Listo"
+    },
+    "reviews": {
+      "eyebrow": "Revisiones",
+      "title": "Requiere atención",
+      "items": "ítems"
+    },
+    "registry": {
+      "eyebrow": "Registro",
+      "title": "Registro de asignaciones"
+    },
+    "timeline": {
+      "eyebrow": "Actividad",
+      "title": "Actividad reciente",
+      "today": "Hoy"
+    },
+    "empty": {
+      "title": "No se encontraron asignaciones",
+      "description": "Ajusta los filtros o agrega una nueva asignación."
+    },
+    "table": {
+      "student": "Estudiante",
+      "route": "Ruta",
+      "vehicle": "Vehículo",
+      "driver": "Conductor",
+      "score": "Puntaje",
+      "status": "Estado",
+      "actions": "Acciones"
+    },
+    "status": {
+      "validated": "Validada",
+      "pending": "Pendiente",
+      "conflict": "Conflicto",
+      "inactive": "Inactiva"
+    },
+    "shift": {
+      "morning": "Mañana",
+      "afternoon": "Tarde"
+    },
+    "validation": {
+      "ready": "Lista",
+      "capacity-risk": "Riesgo de capacidad",
+      "schedule-conflict": "Conflicto de horario",
+      "missing-route": "Ruta faltante",
+      "inactive": "Inactiva"
+    },
+    "form": {
+      "eyebrow": "Asignación",
+      "createTitle": "Crear asignación",
+      "editTitle": "Editar asignación",
+      "subtitle": "Asigna un estudiante a una ruta, vehículo y conductor.",
+      "studentCode": "Código de estudiante",
+      "studentName": "Nombre del estudiante",
+      "grade": "Grado",
+      "guardianName": "Nombre del apoderado",
+      "routeCode": "Código de ruta",
+      "routeName": "Nombre de ruta",
+      "vehiclePlate": "Placa del vehículo",
+      "driverName": "Nombre del conductor",
+      "shift": "Turno",
+      "status": "Estado",
+      "pickupPoint": "Punto de recojo",
+      "pickupWindow": "Ventana de recojo",
+      "validation": "Validación",
+      "validationScore": "Puntaje de validación",
+      "capacityUsage": "Uso de capacidad",
+      "notes": "Notas"
+    },
+    "detail": {
+      "eyebrow": "Detalle de asignación",
+      "route": "Ruta",
+      "vehicle": "Vehículo",
+      "pickup": "Recojo",
+      "guardian": "Apoderado",
+      "score": "Puntaje",
+      "capacity": "Uso de capacidad"
+    },
+    "tracking": {
+      "title": "Asignaciones de mis hijos",
+      "subtitle": "Consulta las asignaciones de tus hijos,",
+      "table_title": "Asignaciones de tus hijos",
+      "no_data": "No se encontraron asignaciones para tus hijos.",
+      "stats": {
+        "total_kids": "Mis hijos"
+      },
+      "management": {
+        "breadcrumbs": "App / Asignaciones",
+        "title": "Gestión de asignaciones",
+        "subtitle": "Gestión de asignaciones de Alumnos"
+      }
+    }
+  },
+  "management": {
+    "breadcrumbs": "App / Asignaciones",
+    "title": "Gestión de asignaciones",
+    "subtitle": "Gestiona las asignaciones de tus estudiantes"
+  },
+  "attendance": {
+    "hero": {
+      "eyebrow": "Control de Asistencia",
+      "title": "Registra cada abordaje y descenso",
+      "subtitle": "Visibilidad en tiempo real de asistencia para estudiantes, apoderados y operaciones.",
+      "reliability": "Confiabilidad de asistencia"
+    },
+    "kpis": {
+      "total": "Asignados totales",
+      "totalHelper": "Estudiantes en ruta hoy",
+      "onBoard": "A bordo",
+      "onBoardHelper": "Actualmente en tránsito",
+      "arrived": "Llegaron",
+      "arrivedHelper": "Descensos confirmados",
+      "waiting": "Esperando",
+      "waitingHelper": "Pendiente de recojo",
+      "absent": "Ausentes",
+      "absentHelper": "Marcados ausentes hoy"
+    },
+    "roster": {
+      "eyebrow": "Registro de asistencia",
+      "title": "Estado en vivo de estudiantes"
+    },
+    "actions": {
+      "export": "Exportar",
+      "detail": "Detalle",
+      "board": "Marcar como a bordo",
+      "arrived": "Marcar como llegado",
+      "absent": "Marcar como ausente"
+    },
+    "filters": {
+      "search": "Buscar por estudiante, ruta, placa...",
+      "route": "Filtrar por ruta",
+      "all": "Todos los registros"
+    },
+    "status": {
+      "waiting": "Esperando",
+      "on_board": "A bordo",
+      "arrived": "Llegó",
+      "absent": "Ausente",
+      "pending_confirmation": "Revisar"
+    },
+    "card": {
+      "checkIn": "Abordaje",
+      "dropOff": "Descenso",
+      "eta": "Llegada est.",
+      "reliability": "Confiabilidad"
+    },
+    "readiness": {
+      "eyebrow": "Preparación",
+      "title": "Confiabilidad de asistencia",
+      "caption": "Confiabilidad"
+    },
+    "activity": {
+      "eyebrow": "Actividad",
+      "title": "Eventos recientes",
+      "today": "Hoy"
+    },
+    "empty": {
+      "title": "No se encontraron registros",
+      "description": "Ajusta los filtros o el término de búsqueda."
+    },
+    "detail": {
+      "eyebrow": "Detalle de asistencia",
+      "route": "Ruta",
+      "vehicle": "Vehículo",
+      "pickup": "Recojo",
+      "school": "Colegio",
+      "checkIn": "Hora de abordaje",
+      "dropOff": "Hora de descenso",
+      "notes": "Notas"
+    }
+  },
+  "companiesBc": {
+    "hero": {
+      "eyebrow": "Gestión de Empresa",
+      "title": "Administra tu negocio y alianzas escolares",
+      "subtitle": "Perfil de empresa, contratos con colegios, miembros del equipo y compliance en un solo lugar.",
+      "score": "Puntaje de compliance"
+    },
+    "metrics": {
+      "company": "Empresas activas",
+      "companyHint": "Organizaciones registradas",
+      "vehicles": "Vehículos",
+      "vehiclesHint": "En toda la empresa",
+      "drivers": "Conductores activos",
+      "driversHint": "Listos para operar",
+      "schools": "Colegios vinculados",
+      "schoolsHint": "Contratos activos",
+      "reviews": "Revisiones pendientes",
+      "reviewsHint": "Requieren acción"
+    },
+    "banner": {
+      "title": "Gestión de empresa activa",
+      "message": "Perfil, contratos y compliance sincronizados con la plataforma Children Path."
+    },
+    "actions": {
+      "refresh": "Refrescar",
+      "export": "Exportar CSV"
+    },
+    "sections": {
+      "profileEyebrow": "Empresa",
+      "profileTitle": "Perfil de negocio",
+      "readinessEyebrow": "Preparación",
+      "readinessTitle": "Puntaje de calidad",
+      "contractsEyebrow": "Contratos",
+      "contractsTitle": "Alianzas escolares",
+      "selectedEyebrow": "Seleccionado",
+      "selectedTitle": "Detalle de contrato",
+      "complianceEyebrow": "Compliance",
+      "complianceTitle": "Ítems regulatorios",
+      "teamEyebrow": "Equipo",
+      "teamTitle": "Miembros de la empresa",
+      "registryEyebrow": "Registro",
+      "registryTitle": "Todos los contratos",
+      "activityEyebrow": "Actividad",
+      "activityTitle": "Actividad reciente"
+    },
+    "labels": {
+      "readyCompany": "Listo",
+      "profile": "Perfil",
+      "contracts": "Contratos",
+      "compliance": "Compliance",
+      "items": "ítems",
+      "today": "Hoy"
+    },
+    "profile": {
+      "admin": "Administrador",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "address": "Dirección",
+      "plan": "Plan",
+      "license": "Vencimiento de licencia"
+    },
+    "contract": {
+      "routes": "Rutas",
+      "students": "Estudiantes",
+      "renewal": "Renovación",
+      "score": "Puntaje",
+      "district": "Distrito",
+      "contact": "Contacto"
+    },
+    "filters": {
+      "search": "Buscar por colegio, distrito, contacto...",
+      "allContracts": "Todos los contratos",
+      "active": "Activos",
+      "renewal": "Renovación",
+      "review": "Revisión",
+      "paused": "Pausados",
+      "allMembers": "Todos los miembros",
+      "invited": "Invitados",
+      "inactive": "Inactivos",
+      "allReviews": "Todas las revisiones",
+      "pending": "Pendientes",
+      "completed": "Completadas"
+    },
+    "status": {
+      "company": {
+        "active": "Activa",
+        "review": "En revisión",
+        "pending": "Pendiente",
+        "suspended": "Suspendida"
+      },
+      "contract": {
+        "active": "Activo",
+        "renewal": "Renovación",
+        "review": "Revisión",
+        "paused": "Pausado"
+      },
+      "member": {
+        "active": "Activo",
+        "invited": "Invitado",
+        "inactive": "Inactivo"
+      },
+      "compliance": {
+        "completed": "Completado",
+        "pending": "Pendiente",
+        "review": "En revisión"
+      }
+    },
+    "empty": {
+      "title": "No se encontraron contratos",
+      "message": "Ajusta los filtros o el término de búsqueda."
+    },
+    "table": {
+      "school": "Colegio",
+      "district": "Distrito",
+      "routes": "Rutas",
+      "students": "Estudiantes",
+      "status": "Estado",
+      "score": "Puntaje"
+    }
+  },
+  "dashboardPage": {
+    "eyebrow": "Children Path · Panel",
+    "hero": {
+      "operator": "Ruta activa",
+      "company": "Confiabilidad de asistencia",
+      "admin": "Empresas activas"
+    },
+    "roles": {
+      "operator": {
+        "title": "Buenos días, conductor",
+        "subtitle": "Tu ruta está lista. Sigue el viaje actual y mantén informados a los apoderados."
+      },
+      "company": {
+        "title": "Buenos días, equipo",
+        "subtitle": "Monitorea tu flota, revisa alertas y mantén tu operación de transporte escolar al día."
+      },
+      "admin": {
+        "title": "Vista general de la plataforma",
+        "subtitle": "Sigue empresas activas, monitorea incidentes y administra el ecosistema Children Path."
+      }
+    },
+    "metrics": {
+      "activeTrips": "Viajes activos",
+      "studentsOnBoard": "Estudiantes a bordo",
+      "openAlerts": "Alertas abiertas",
+      "attendanceRate": "Tasa de asistencia",
+      "fleetAvailability": "Disponibilidad de flota",
+      "routeCoverage": "Cobertura de rutas",
+      "activeCompanies": "Empresas activas",
+      "platformTrips": "Viajes de la plataforma",
+      "serviceHealth": "Salud del servicio"
+    },
+    "helpers": {
+      "operatorTrips": "Viaje en progreso",
+      "students": "En unidades activas",
+      "alerts": "Requieren atención",
+      "attendance": "Abordajes confirmados",
+      "activeTrips": "En todas las empresas",
+      "fleet": "Vehículos listos",
+      "coverage": "Paradas planificadas",
+      "companies": "Organizaciones registradas",
+      "platformTrips": "Día operativo actual",
+      "serviceHealth": "Sistemas operando normal"
+    },
+    "kpis": {
+      "eyebrow": "KPIs operativos",
+      "title": "Resumen de rendimiento"
+    },
+    "map": {
+      "eyebrow": "Rastreo en vivo",
+      "title": "Vehículos activos",
+      "live": "En vivo",
+      "loading": "Cargando mapa...",
+      "activeUnits": "Unidades activas"
+    },
+    "alerts": {
+      "eyebrow": "Atención",
+      "title": "Alertas",
+      "items": "ítems",
+      "emptyTitle": "Sin alertas",
+      "emptyMessage": "Todos los sistemas funcionando correctamente."
+    },
+    "activity": {
+      "eyebrow": "Cronología",
+      "title": "Actividad reciente",
+      "today": "Hoy"
+    }
+  },
+  "drivers": {
+    "eyebrow": "Gestión de Conductores",
+    "title": "Mantén a cada conductor listo para la ruta",
+    "subtitle": "Monitorea disponibilidad, cumplimiento de licencias y puntajes de seguridad de tu equipo de transporte escolar.",
+    "heroSafety": "Puntaje de seguridad promedio",
+    "actions": {
+      "registerDriver": "Registrar conductor",
+      "export": "Exportar lista"
+    },
+    "kpis": {
+      "totalDrivers": "Conductores totales",
+      "registeredDrivers": "Registrados en la empresa",
+      "availableDrivers": "Disponibles",
+      "readyForRoutes": "Listos para asignaciones",
+      "onRouteDrivers": "En ruta",
+      "currentlyOperating": "Operando actualmente",
+      "pendingReviews": "Revisiones pendientes",
+      "requiresValidation": "Requieren validación",
+      "licenseCompliance": "Cumplimiento de licencias",
+      "validLicenses": "Licencias vigentes"
+    },
+    "filters": {
+      "all": "Todos",
+      "available": "Disponibles",
+      "onRoute": "En ruta",
+      "review": "Revisión",
+      "offDuty": "Fuera de servicio",
+      "searchPlaceholder": "Buscar por nombre, código, licencia..."
+    },
+    "status": {
+      "available": "Disponible",
+      "onRoute": "En ruta",
+      "review": "Revisión",
+      "offDuty": "Fuera de servicio"
+    },
+    "priority": {
+      "low": "Baja",
+      "medium": "Media",
+      "high": "Alta"
+    },
+    "inventory": {
+      "eyebrow": "Inventario",
+      "title": "Registro de conductores"
+    },
+    "readiness": {
+      "eyebrow": "Preparación",
+      "title": "Preparación del equipo",
+      "safeOperation": "Operación segura"
+    },
+    "compliance": {
+      "eyebrow": "Cumplimiento",
+      "title": "Revisiones pendientes",
+      "items": "ítems"
+    },
+    "card": {
+      "years": "años",
+      "students": "estudiantes",
+      "safetyScore": "Puntaje de seguridad",
+      "documentsValid": "Documentos vigentes",
+      "documentsPending": "Documentos pendientes"
+    },
+    "table": {
+      "eyebrow": "Registro",
+      "title": "Todos los conductores",
+      "driver": "Conductor",
+      "license": "Licencia",
+      "vehicle": "Vehículo",
+      "route": "Ruta",
+      "punctuality": "Puntualidad",
+      "status": "Estado",
+      "actions": "Acciones"
+    },
+    "timeline": {
+      "eyebrow": "Cronología",
+      "title": "Turnos recientes",
+      "today": "Hoy"
+    },
+    "empty": {
+      "title": "No se encontraron conductores",
+      "message": "Ajusta los filtros o el término de búsqueda."
+    },
+    "dialog": {
+      "registerTitle": "Nuevo conductor",
+      "detailTitle": "Detalle del conductor",
+      "fullName": "Nombre completo",
+      "license": "Número de licencia",
+      "licenseClass": "Clase de licencia",
+      "phone": "Teléfono",
+      "email": "Correo",
+      "vehicle": "Vehículo asignado",
+      "route": "Ruta asignada",
+      "status": "Estado",
+      "safety": "Puntaje de seguridad",
+      "punctuality": "Puntaje de puntualidad",
+      "create": "Crear"
+    }
+  },
+  "incidents": {
+    "hero": {
+      "eyebrow": "Gestión de Incidencias",
+      "title": "Registra y resuelve cada incidencia operativa",
+      "subtitle": "Vista centralizada de retrasos, desvíos, fallas mecánicas y eventos de seguridad en tu operación de transporte escolar.",
+      "safetyScore": "Puntaje de seguridad"
+    },
+    "metrics": {
+      "total": "Incidencias totales",
+      "totalHint": "Registradas esta semana",
+      "open": "Abiertas",
+      "openHint": "Pendientes de resolución",
+      "critical": "Críticas",
+      "criticalHint": "Requieren acción inmediata",
+      "escalated": "Escaladas",
+      "escalatedHint": "Esperando revisión del admin",
+      "resolved": "Resueltas",
+      "resolvedHint": "Cerradas exitosamente"
+    },
+    "banner": {
+      "title": "Monitoreo de incidencias activo",
+      "message": "Las incidencias críticas y escaladas requieren revisión del admin antes del cierre del día operativo."
+    },
+    "actions": {
+      "report": "Reportar incidencia",
+      "reviewCritical": "Revisar críticas",
+      "review": "Revisar",
+      "escalate": "Escalar",
+      "resolve": "Resolver",
+      "remove": "Eliminar",
+      "saveReport": "Guardar reporte",
+      "startReview": "Iniciar revisión",
+      "export": "Exportar CSV"
+    },
+    "sections": {
+      "rosterEyebrow": "Flujo de incidencias",
+      "rosterTitle": "Incidencias activas",
+      "detailEyebrow": "Seleccionada",
+      "detailTitle": "Detalle de incidencia",
+      "reviewEyebrow": "Revisiones",
+      "reviewTitle": "Revisiones pendientes",
+      "timelineEyebrow": "Actividad",
+      "timelineTitle": "Eventos recientes",
+      "registryEyebrow": "Registro",
+      "registryTitle": "Todas las incidencias",
+      "formEyebrow": "Nueva incidencia",
+      "formTitle": "Reportar nueva incidencia",
+      "today": "Hoy"
+    },
+    "labels": {
+      "responseTime": "Tiempo de respuesta",
+      "items": "ítems"
+    },
+    "filters": {
+      "search": "Buscar por título, código, vehículo..."
+    },
+    "types": {
+      "all": "Todos los tipos",
+      "delay": "Retraso",
+      "routeDeviation": "Desvío de ruta",
+      "mechanical": "Mecánica",
+      "medical": "Médica",
+      "safety": "Seguridad"
+    },
+    "severity": {
+      "all": "Todas las severidades",
+      "critical": "Crítica",
+      "high": "Alta",
+      "medium": "Media",
+      "low": "Baja"
+    },
+    "status": {
+      "all": "Todos los estados",
+      "reported": "Reportada",
+      "inReview": "En revisión",
+      "escalated": "Escalada",
+      "resolved": "Resuelta",
+      "closed": "Cerrada"
+    },
+    "detail": {
+      "code": "Código",
+      "status": "Estado",
+      "severity": "Severidad",
+      "vehicle": "Vehículo",
+      "route": "Ruta",
+      "driver": "Conductor",
+      "evidence": "Evidencia",
+      "reportedBy": "Reportada por",
+      "resolution": "Resolución"
+    },
+    "table": {
+      "incident": "Incidencia",
+      "vehicle": "Vehículo",
+      "route": "Ruta",
+      "severity": "Severidad",
+      "status": "Estado",
+      "response": "Respuesta",
+      "actions": "Acciones"
+    },
+    "form": {
+      "title": "Título",
+      "type": "Tipo",
+      "severity": "Severidad",
+      "vehicle": "Vehículo",
+      "route": "Ruta",
+      "driver": "Conductor",
+      "description": "Descripción"
+    },
+    "empty": {
+      "title": "No se encontraron incidencias",
+      "message": "Ajusta los filtros o el término de búsqueda."
+    }
+  },
+  "alertsCenter": {
+    "hero": {
+      "eyebrow": "Alertas y Notificaciones",
+      "title": "Mantente al día con cada evento",
+      "subtitle": "Bandeja centralizada de alertas operativas y notificaciones del ecosistema Children Path.",
+      "unread": "No leídas"
+    },
+    "metrics": {
+      "total": "Ítems totales",
+      "totalHint": "En tu bandeja",
+      "critical": "Alertas críticas",
+      "criticalHint": "Requieren acción inmediata",
+      "unread": "No leídas",
+      "unreadHint": "Esperando revisión",
+      "delivery": "Tasa de entrega",
+      "deliveryHint": "Mensajes entregados",
+      "acknowledged": "Reconocidas",
+      "acknowledgedHint": "Confirmadas por usuario"
+    },
+    "banner": {
+      "title": "Centro de notificaciones activo",
+      "message": "Las alertas y notificaciones no leídas permanecen en tu bandeja hasta que las revises."
+    },
+    "actions": {
+      "markAll": "Marcar todas como leídas",
+      "markRead": "Marcar como leída",
+      "acknowledge": "Reconocer",
+      "remove": "Eliminar",
+      "export": "Exportar CSV"
+    },
+    "sections": {
+      "inboxEyebrow": "Bandeja",
+      "inboxTitle": "Todos los ítems",
+      "detailEyebrow": "Seleccionado",
+      "detailTitle": "Detalle del ítem",
+      "timelineEyebrow": "Actividad",
+      "timelineTitle": "Eventos recientes",
+      "today": "Hoy"
+    },
+    "filters": {
+      "search": "Buscar por título, mensaje, vehículo...",
+      "all": "Todos",
+      "alerts": "Alertas",
+      "notifications": "Notificaciones",
+      "allPriority": "Todas las prioridades",
+      "allStatus": "Todos los estados"
+    },
+    "priority": {
+      "critical": "Crítica",
+      "high": "Alta",
+      "medium": "Media",
+      "low": "Baja"
+    },
+    "status": {
+      "new": "Nueva",
+      "read": "Leída",
+      "acknowledged": "Reconocida"
+    },
+    "detail": {
+      "status": "Estado",
+      "priority": "Prioridad",
+      "source": "Fuente",
+      "vehicle": "Vehículo",
+      "route": "Ruta",
+      "recipient": "Destinatario"
+    },
+    "empty": {
+      "title": "No se encontraron notificaciones",
+      "message": "Ajusta los filtros o el término de búsqueda."
+    }
+  },
+  "studentsPage": {
+    "eyebrow": "Student Management",
+    "title": "Every student, clearly tracked",
+    "subtitle": "Centralized record of students, guardians, routes and authorization status.",
+    "heroBadge": "Attendance reliability",
+    "kpis": {
+      "totalStudents": "Total students",
+      "totalStudentsHelper": "Registered in the company",
+      "activeStudents": "Active students",
+      "activeStudentsHelper": "Currently receiving service",
+      "assignedStudents": "Assigned",
+      "assignedStudentsHelper": "With active route",
+      "unassignedStudents": "Unassigned",
+      "unassignedStudentsHelper": "Require route assignment",
+      "guardianVerified": "Guardian verified",
+      "guardianVerifiedHelper": "Authorization confirmed"
+    },
+    "bannerTitle": "Students require route assignment",
+    "bannerText": "Some students are still without a confirmed route or pickup point.",
+    "readinessEyebrow": "Readiness",
+    "readinessTitle": "Service readiness",
+    "readinessLabel": "Students ready",
+    "readiness": {
+      "assigned": "Assigned",
+      "verified": "Verified",
+      "review": "Review"
+    },
+    "reviewEyebrow": "Reviews",
+    "reviewTitle": "Pending reviews",
+    "items": "items",
+    "inventoryEyebrow": "Inventory",
+    "operationalStatus": "Operational status",
+    "recordsEyebrow": "Registry",
+    "registryTitle": "All students",
+    "timelineEyebrow": "Activity",
+    "timelineTitle": "Recent activity",
+    "today": "Today",
+    "searchPlaceholder": "Search by name, code, guardian, school...",
+    "unassignedRoute": "No route assigned",
+    "pendingAssignment": "Pending assignment",
+    "emptyValue": "Not available",
+    "filters": {
+      "all": "All",
+      "active": "Active",
+      "unassigned": "Unassigned",
+      "review": "Review",
+      "inactive": "Inactive"
+    },
+    "status": {
+      "active": "Active",
+      "unassigned": "Unassigned",
+      "review": "Review",
+      "inactive": "Inactive"
+    },
+    "authorization": {
+      "verified": "Authorization verified",
+      "pending": "Authorization pending",
+      "expired": "Authorization expired"
+    },
+    "actions": {
+      "registerStudent": "Register student",
+      "exportList": "Export list",
+      "reviewUnassigned": "Review unassigned"
+    },
+    "card": {
+      "route": "Route",
+      "driver": "Driver",
+      "window": "Pickup window",
+      "attendance": "Attendance"
+    },
+    "table": {
+      "student": "Student",
+      "guardian": "Guardian",
+      "school": "School",
+      "route": "Route",
+      "attendance": "Attendance",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "empty": {
+      "title": "No students found",
+      "message": "Adjust the filters or search term."
+    },
+    "dialogs": {
+      "formEyebrow": "Student",
+      "registerTitle": "Register student",
+      "editTitle": "Edit student",
+      "detailEyebrow": "Student detail",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "grade": "Grade",
+      "school": "School",
+      "guardianName": "Guardian name",
+      "guardianPhone": "Guardian phone",
+      "guardianEmail": "Guardian email",
+      "emergencyContact": "Emergency contact",
+      "route": "Route",
+      "pickupPoint": "Pickup point",
+      "pickupWindow": "Pickup window",
+      "status": "Status",
+      "notes": "Notes",
+      "cancel": "Cancel",
+      "save": "Save",
+      "register": "Register",
+      "close": "Close"
+    }
+  },
+  "subscriptions": {
+    "eyebrow": "Facturación y Plan",
+    "title": "Administra tu suscripción y pagos",
+    "subtitle": "Revisa tu plan actual, actualiza métodos de pago y accede a tu historial de facturación.",
+    "month": "mes",
+    "currentPlan": "Plan actual",
+    "currentUsage": "Uso actual",
+    "paymentMethod": "Métodos de pago",
+    "billingHistory": "Historial de facturación",
+    "renewsOn": "Se renueva el",
+    "customPrice": "Precio personalizado",
+    "add": "Agregar",
+    "primary": "Principal",
+    "expires": "Vence",
+    "unlimited": "Ilimitado",
+    "exportPdf": "Exportar PDF",
+    "readonly": {
+      "badge": "Plan gestionado",
+      "title": "Plan gestionado por el equipo de ventas",
+      "message": "Tu plan es asignado y gestionado por el equipo de ventas de Children Path. Contacta a soporte para actualizar o modificar tu suscripción.",
+      "contact": "Soporte:",
+      "scopeFallback": "Contrato de flota asignado por el equipo de ventas de Children Path"
+    },
+    "status": {
+      "active": "Activo",
+      "pending": "Pendiente",
+      "expired": "Expirado",
+      "cancelled": "Cancelado",
+      "paid": "Pagado",
+      "failed": "Fallido"
+    },
+    "renewal": {
+      "automatic": "Renovación automática",
+      "manual": "Renovación manual",
+      "assisted": "Renovación asistida"
+    },
+    "metrics": {
+      "usingPlan": "Usando plan por",
+      "days": "días",
+      "started": "Inició el",
+      "nextCharge": "Próximo cobro en",
+      "lastPayment": "Último pago",
+      "receiptEmail": "Correo de recibos",
+      "receiptHelper": "Las facturas se envían aquí"
+    },
+    "usage": {
+      "eyebrow": "Uso",
+      "vehicles": "Vehículos",
+      "students": "Estudiantes",
+      "users": "Usuarios del equipo"
+    },
+    "payment": {
+      "eyebrow": "Pago",
+      "cardSaved": "Método de pago guardado correctamente.",
+      "setPrimary": "Marcar como principal",
+      "form": {
+        "holder": "Titular de la tarjeta",
+        "brand": "Marca de tarjeta",
+        "number": "Número de tarjeta",
+        "expires": "Vence el",
+        "cancel": "Cancelar",
+        "save": "Guardar método"
+      }
+    },
+    "history": {
+      "eyebrow": "Facturación",
+      "requestReceipt": "Solicitar recibo",
+      "receiptSent": "Recibo solicitado para"
+    },
+    "plansSection": {
+      "eyebrow": "Planes",
+      "title": "Planes disponibles"
+    },
+    "plans": {
+      "starter": "Starter",
+      "pro": "Pro",
+      "enterprise": "Enterprise"
+    },
+    "targets": {
+      "starter": "Pequeños operadores de transporte empezando",
+      "pro": "Empresas en crecimiento con múltiples rutas",
+      "enterprise": "Flotas grandes y operaciones multi-colegio"
+    },
+    "features": {
+      "vehicles5": "Hasta 5 vehículos",
+      "vehicles10": "Hasta 10 vehículos",
+      "unlimitedVehicles": "Vehículos ilimitados",
+      "students100": "Hasta 100 estudiantes",
+      "students300": "Hasta 300 estudiantes",
+      "unlimitedStudents": "Estudiantes ilimitados",
+      "realtimeTracking": "Rastreo en tiempo real",
+      "attendanceTracking": "Control de asistencia",
+      "analyticsBasic": "Analíticas básicas",
+      "analyticsAdvanced": "Analíticas avanzadas",
+      "prioritySupport": "Soporte prioritario",
+      "dedicatedSupport": "Soporte dedicado"
+    },
+    "actions": {
+      "addCard": "Agregar método de pago",
+      "upgrade": "Actualizar plan",
+      "current": "Plan actual",
+      "contact": "Contactar ventas"
+    },
+    "table": {
+      "date": "Fecha",
+      "description": "Descripción",
+      "amount": "Monto",
+      "method": "Método",
+      "status": "Estado",
+      "invoice": "Factura"
+    }
+  },
+  "trackingBc": {
+    "eyebrow": "Rastreo en Vivo",
+    "title": "Monitoreo de flota en tiempo real",
+    "subtitle": "Monitorea cada unidad activa, la señal GPS y el progreso de rutas de toda la operación.",
+    "signalScore": "Puntaje de señal GPS",
+    "kpis": {
+      "activeUnits": "Unidades activas",
+      "activeUnitsHint": "Reportando GPS en vivo",
+      "delayedUnits": "Unidades retrasadas",
+      "delayedUnitsHint": "Fuera de horario",
+      "averageSpeed": "Velocidad promedio",
+      "averageSpeedHint": "En unidades activas",
+      "routeProgress": "Progreso de ruta",
+      "routeProgressHint": "Completitud promedio",
+      "activeAlerts": "Alertas activas",
+      "activeAlertsHint": "Requieren atención"
+    },
+    "filters": {
+      "all": "Todas",
+      "onRoute": "En ruta",
+      "delayed": "Retrasadas",
+      "stopped": "Detenidas"
+    },
+    "status": {
+      "onRoute": "En ruta",
+      "delayed": "Retrasada",
+      "stopped": "Detenida",
+      "offline": "Sin conexión"
+    },
+    "search": "Buscar por vehículo, conductor, ruta...",
+    "refresh": "Refrescar",
+    "liveOperation": "Operación en vivo",
+    "mapTitle": "Mapa de flota",
+    "liveTracking": "Rastreo en vivo",
+    "unitsEyebrow": "Unidades",
+    "unitsTitle": "Unidades activas",
+    "empty": "Ninguna unidad coincide con los filtros",
+    "alertsEyebrow": "Alertas",
+    "alertsTitle": "Alertas activas",
+    "activityEyebrow": "Actividad",
+    "activityTitle": "Eventos recientes",
+    "today": "Hoy",
+    "items": "ítems",
+    "recordsEyebrow": "Registro",
+    "recordsTitle": "Snapshot en vivo",
+    "export": "Exportar snapshot",
+    "unit": {
+      "driver": "Conductor",
+      "district": "Distrito",
+      "nextStop": "Próxima parada",
+      "eta": "ETA",
+      "progress": "Progreso"
+    },
+    "table": {
+      "vehicle": "Vehículo",
+      "driver": "Conductor",
+      "route": "Ruta",
+      "speed": "Velocidad",
+      "progress": "Progreso",
+      "status": "Estado",
+      "updated": "Última actualización",
+      "actions": "Acciones"
+    }
+  },
+  "tripsBc": {
+    "eyebrow": "Gestión de Viajes",
+    "title": "Controla el ciclo completo de cada viaje",
+    "subtitle": "Programa, monitorea y cierra cada viaje de transporte escolar con visibilidad operativa completa.",
+    "serviceReliability": "Confiabilidad del servicio",
+    "control": "Control de viajes",
+    "operationalStatus": "Estado operativo de viajes",
+    "records": "Registros operativos",
+    "registry": "Registro de viajes",
+    "latestActivity": "Actividad reciente",
+    "timeline": "Cronología de viajes",
+    "warningTitle": "Los viajes requieren seguimiento operativo",
+    "warningText": "Algunos viajes tienen retrasos o problemas. Revisa el progreso de rutas antes de cerrar el día operativo.",
+    "actions": {
+      "new": "Nuevo viaje",
+      "reviewDelayed": "Revisar viajes retrasados",
+      "export": "Exportar lista"
+    },
+    "status": {
+      "scheduled": "Programado",
+      "in_progress": "En progreso",
+      "delayed": "Retrasado",
+      "completed": "Completado",
+      "canceled": "Cancelado"
+    },
+    "shift": {
+      "morning": "Mañana",
+      "afternoon": "Tarde",
+      "return": "Retorno"
+    },
+    "kpis": {
+      "totalTrips": "Viajes totales",
+      "activeTrips": "Viajes activos",
+      "scheduledTrips": "Viajes programados",
+      "delayedTrips": "Viajes retrasados",
+      "completedTrips": "Viajes completados"
+    },
+    "helpers": {
+      "totalTrips": "Registros operativos diarios",
+      "activeTrips": "En curso o retrasados",
+      "scheduledTrips": "Esperando salida",
+      "delayedTrips": "Requieren revisión operativa",
+      "completedTrips": "Registros cerrados"
+    },
+    "table": {
+      "trip": "Viaje",
+      "vehicle": "Vehículo",
+      "driver": "Conductor",
+      "schedule": "Horario",
+      "progress": "Progreso",
+      "status": "Estado",
+      "actions": "Acciones"
+    },
+    "empty": {
+      "title": "No se encontraron viajes",
+      "message": "Intenta cambiar el término de búsqueda, el estado o el turno."
+    }
+  },
+  "routesPage": {
+    "eyebrow": "Gestión de Rutas",
+    "title": "Diseña y optimiza cada ruta escolar",
+    "subtitle": "Gestiona cobertura, secuencia de paradas, asignación de conductores y estado de optimización.",
+    "heroBadge": "Cobertura de rutas",
+    "kpis": {
+      "totalRoutes": "Rutas totales",
+      "totalRoutesHelper": "Rutas registradas",
+      "activeRoutes": "Rutas activas",
+      "activeRoutesHelper": "Operando actualmente",
+      "scheduledStops": "Paradas programadas",
+      "scheduledStopsHelper": "En todas las rutas",
+      "districts": "Distritos cubiertos",
+      "districtsHelper": "Distritos operativos",
+      "optimization": "Puntaje de optimización",
+      "optimizationHelper": "Eficiencia promedio"
+    },
+    "inventoryEyebrow": "Inventario",
+    "operationalStatus": "Estado operativo",
+    "recordsEyebrow": "Registros",
+    "registryTitle": "Registro de rutas",
+    "timelineEyebrow": "Actividad",
+    "timelineTitle": "Actividad reciente",
+    "today": "Hoy",
+    "searchPlaceholder": "Buscar por código, ruta, conductor, distrito...",
+    "filters": {
+      "all": "Todas",
+      "active": "Activas",
+      "scheduled": "Programadas",
+      "review": "Revisión",
+      "inactive": "Inactivas"
+    },
+    "status": {
+      "active": "Activa",
+      "scheduled": "Programada",
+      "review": "Revisión",
+      "inactive": "Inactiva"
+    },
+    "card": {
+      "stops": "Paradas",
+      "students": "Estudiantes",
+      "duration": "Duración",
+      "coverage": "Cobertura",
+      "capacityUsage": "Uso de capacidad",
+      "optimizationNeeded": "Optimización requerida",
+      "optimizedRoute": "Ruta optimizada"
+    },
+    "actions": {
+      "createRoute": "Crear ruta",
+      "exportList": "Exportar lista"
+    },
+    "table": {
+      "route": "Ruta",
+      "driver": "Conductor",
+      "vehicle": "Vehículo",
+      "stops": "Paradas",
+      "coverage": "Cobertura",
+      "status": "Estado",
+      "actions": "Acciones"
+    },
+    "empty": {
+      "title": "No se encontraron rutas",
+      "message": "Ajusta los filtros o el término de búsqueda."
+    },
+    "dialog": {
+      "createTitle": "Nueva ruta",
+      "detailTitle": "Detalle de ruta",
+      "code": "Código",
+      "name": "Nombre de ruta",
+      "district": "Distrito",
+      "school": "Colegio",
+      "driver": "Conductor",
+      "vehicle": "Vehículo",
+      "students": "Estudiantes",
+      "capacity": "Capacidad",
+      "stops": "Paradas",
+      "status": "Estado",
+      "schedule": "Horario",
+      "coverage": "Cobertura",
+      "optimization": "Puntaje de optimización",
+      "create": "Crear"
+    }
+  },
+  "iam": {
+    "roleSelection": {
+      "title": "Bienvenido a Children Path",
+      "subtitle": "¿Cómo deseas ingresar?",
+      "parent": "Padres de Familia",
+      "driver": "Conductores Privados",
+      "company": "Empresas de Transporte"
+    },
+    "signIn": {
+      "title": "Iniciar Sesión",
+      "subtitle": "Bienvenido de vuelta a Children Path",
+      "signingInAs": "Ingresando como {role}",
+      "username": "Usuario",
+      "usernamePlaceholder": "Ingresa tu usuario",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Ingresa tu contraseña",
+      "submit": "Entrar",
+      "noAccount": "¿No tienes cuenta?",
+      "register": "Regístrate"
+    },
+    "signUp": {
+      "title": "Registrarse",
+      "subtitle": "Crea tu cuenta de Children Path",
+      "username": "Usuario",
+      "usernamePlaceholder": "Elige un usuario",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Elige una contraseña",
+      "submit": "Registrarme",
+      "hasAccount": "¿Ya tienes cuenta?",
+      "login": "Inicia sesión"
+    },
+    "roles": {
+      "parent": "Padre de Familia",
+      "driver": "Conductor Privado",
+      "company": "Empresa de Transporte"
+    },
+    "language": "Idioma"
   }
 }

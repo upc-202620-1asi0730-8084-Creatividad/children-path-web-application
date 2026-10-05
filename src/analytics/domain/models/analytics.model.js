@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Domain models for the Analytics bounded context.
  *
  * @typedef {'healthy'|'attention'|'risk'} MonitoringStatus

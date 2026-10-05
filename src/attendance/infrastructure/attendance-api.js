@@ -1,4 +1,4 @@
-import { BaseApi } from '../../shared/infrastructure/base-api.js';
+﻿import { BaseApi } from '../../shared/infrastructure/base-api.js';
 
 const dashboardPath = import.meta.env.VITE_ATTENDANCE_DASHBOARD_ENDPOINT_PATH;
 const recordsPath   = import.meta.env.VITE_ATTENDANCE_RECORDS_ENDPOINT_PATH;

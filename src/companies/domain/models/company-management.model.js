@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Domain models for the Companies bounded context.
  *
  * @typedef {'active'|'review'|'pending'|'suspended'} CompanyStatus
@@ -162,10 +162,10 @@ export function fallbackCompanyManagement() {
             }
         ],
         members: [
-            { id: 'member-001', name: 'Maria Lopez',  email: 'maria.lopez@childrenpath.pe',  role: 'Company Admin',          status: 'active',  lastAccess: 'Today, 8:12 AM',      scope: 'Full company management' },
+            { id: 'member-001', name: 'Maria Lopez',  email: 'maria.lopez@childrenpath.pe',  role: 'Company Admin',         status: 'active',  lastAccess: 'Today, 8:12 AM',      scope: 'Full company management' },
             { id: 'member-002', name: 'Carlos Perez', email: 'carlos.perez@childrenpath.pe', role: 'Operations Coordinator', status: 'active',  lastAccess: 'Today, 7:50 AM',      scope: 'Routes, drivers and incidents' },
-            { id: 'member-003', name: 'Andrea Rojas', email: 'andrea.rojas@childrenpath.pe', role: 'Fleet Supervisor',        status: 'active',  lastAccess: 'Yesterday, 6:40 PM', scope: 'Vehicles and maintenance' },
-            { id: 'member-004', name: 'Luis Torres',  email: 'luis.torres@childrenpath.pe',  role: 'Company Driver',          status: 'invited', lastAccess: 'Pending invitation', scope: 'Assigned trips only' }
+            { id: 'member-003', name: 'Andrea Rojas', email: 'andrea.rojas@childrenpath.pe', role: 'Fleet Supervisor',       status: 'active',  lastAccess: 'Yesterday, 6:40 PM', scope: 'Vehicles and maintenance' },
+            { id: 'member-004', name: 'Luis Torres',  email: 'luis.torres@childrenpath.pe',  role: 'Company Driver',         status: 'invited', lastAccess: 'Pending invitation', scope: 'Assigned trips only' }
         ],
         complianceItems: [
             {
@@ -187,7 +187,7 @@ export function fallbackCompanyManagement() {
         activities: [
             { id: 'act-001', time: '8:15 AM', title: 'Company profile verified',           description: 'Business data and contact information were confirmed.',                    status: 'completed' },
             { id: 'act-002', time: '7:45 AM', title: 'School contract flagged for renewal', description: 'Santa Maria School requires contract evidence validation.',               status: 'pending' },
-            { id: 'act-003', time: '7:20 AM', title: 'Operations team synchronized',       description: 'Fleet and route supervisors confirmed daily operating scope.',             status: 'active' }
+            { id: 'act-003', time: '7:20 AM', title: 'Operations team synchronized',       description: 'Fleet and route supervisors confirmed daily operating scope.',            status: 'active' }
         ]
     };
 }

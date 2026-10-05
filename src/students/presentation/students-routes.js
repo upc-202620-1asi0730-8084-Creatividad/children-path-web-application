@@ -1,4 +1,4 @@
-const studentManagement = () => import('./views/student-management.vue');
+﻿const studentManagement = () => import('./views/student-management.vue');
 
 const studentsRoutes = [
     {

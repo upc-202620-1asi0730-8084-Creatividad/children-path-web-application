@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+﻿import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { TripsApi } from '../infrastructure/trips-api.js';
 import { fallbackTrips } from '../domain/models/trip-dashboard.model.js';
@@ -106,7 +106,7 @@ const useTripsStore = defineStore('trips', () => {
             validationMessage: 'Trip started and live tracking enabled.',
             updatedAt: 'Now'
         });
-        return updateTrip(updated, 'Trip started', `${trip.routeName} started with vehicle${trip.vehiclePlate}.`, 'active');
+        return updateTrip(updated, 'Trip started', `${trip.routeName} started with vehicle ${trip.vehiclePlate}.`, 'active');
     }
 
     function completeTrip(trip) {

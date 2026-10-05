@@ -1,4 +1,4 @@
-import { Trip } from '../entities/trip.entity.js';
+﻿import { Trip } from '../entities/trip.entity.js';
 
 /**
  * @typedef {Object} TripDashboard

@@ -1,10 +1,34 @@
-﻿/**
- * Defines the base type for API facades in a bounded context.
+﻿import axios from "axios";
+
+const platformApi = import.meta.env.VITE_CHILDREN_PATH_API_URL;
+
+/**
+ * Shared infrastructure base class that configures the HTTP client.
  *
- * @remarks
- * A concrete API service composes one or more endpoint classes and exposes
- * use-case oriented methods to the application layer.
+ * @class BaseApi
  */
 export class BaseApi {
-    // No methods defined; child classes will compose endpoint instances.
+    /**
+     * Axios HTTP client instance shared by all endpoints.
+     * @type {import('axios').AxiosInstance}
+     */
+    #http;
+
+    constructor() {
+        this.#http = axios.create({
+            baseURL: platformApi,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        });
+    }
+
+    /**
+     * Returns the configured Axios HTTP client.
+     * @returns {import('axios').AxiosInstance}
+     */
+    get http() {
+        return this.#http;
+    }
 }

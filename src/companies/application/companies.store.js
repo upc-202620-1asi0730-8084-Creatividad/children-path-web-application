@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+﻿import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { CompaniesApi } from '../infrastructure/companies-api.js';
 import { fallbackCompanyManagement } from '../domain/models/company-management.model.js';

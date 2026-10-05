@@ -1,4 +1,4 @@
-import { AttendanceRecord } from '../domain/entities/attendance-record.entity.js';
+﻿import { AttendanceRecord } from '../domain/entities/attendance-record.entity.js';
 
 /**
  * Maps attendance record resources into domain entities.

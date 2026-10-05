@@ -1,4 +1,4 @@
-import { BaseApi } from '../../shared/infrastructure/base-api.js';
+﻿import { BaseApi } from '../../shared/infrastructure/base-api.js';
 
 const dashboardPath = import.meta.env.VITE_NOTIFICATIONS_DASHBOARD_ENDPOINT_PATH;
 
@@ -13,4 +13,3 @@ export class NotificationsApi extends BaseApi {
         return this.http.get(dashboardPath);
     }
 }
-

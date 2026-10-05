@@ -1,4 +1,4 @@
-import { Student } from '../domain/entities/student.entity.js';
+﻿import { Student } from '../domain/entities/student.entity.js';
 
 /**
  * Maps student resources from the API into Student domain entities.
@@ -12,7 +12,7 @@ export class StudentAssembler {
 
     static toEntitiesFromResponse(response) {
         if (response.status !== 200) {
-            console.error(`${response.status},${response.statusText}`);
+            console.error(`${response.status}, ${response.statusText}`);
             return [];
         }
         const data = response.data;

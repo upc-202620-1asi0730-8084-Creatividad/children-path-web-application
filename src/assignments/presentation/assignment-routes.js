@@ -1,4 +1,4 @@
-const assignmentManagement = () => import('./views/assignment-management.vue');
+﻿const assignmentManagement = () => import('./views/assignment-management.vue');
 const parentAssignmentList = () => import('./views/parent-assignment-list.vue');
 
 const assignmentRoutes = [

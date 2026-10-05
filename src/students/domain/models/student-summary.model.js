@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Value object representing the aggregated metrics of the student body.
  *
  * @typedef {Object} StudentSummary

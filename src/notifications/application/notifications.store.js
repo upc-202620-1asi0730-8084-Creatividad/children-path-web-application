@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+﻿import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { NotificationsApi } from '../infrastructure/notifications-api.js';
 import { fallbackNotifications, summaryFrom } from '../domain/models/notification.model.js';
@@ -142,3 +142,4 @@ const useNotificationsStore = defineStore('notifications', () => {
     };
 });
 
+export default useNotificationsStore;

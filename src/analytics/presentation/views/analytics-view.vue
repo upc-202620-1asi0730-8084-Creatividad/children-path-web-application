@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 import { computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import useAnalyticsStore from '@/analytics/application/analytics.store.js';

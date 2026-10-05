@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 import { computed, onMounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import useNotificationsStore from '@/notifications/application/notifications.store.js';
@@ -628,4 +628,3 @@ dd { margin: 0; color: #0f172a; font-weight: 900; text-align: right; }
   .row-actions { grid-column: 1 / -1; justify-content: flex-end; }
 }
 </style>
-

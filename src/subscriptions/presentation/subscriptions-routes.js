@@ -1,4 +1,4 @@
-const subscriptionPayments = () => import('./views/subscription-payments.vue');
+﻿const subscriptionPayments = () => import('./views/subscription-payments.vue');
 
 const subscriptionsRoutes = [
     {

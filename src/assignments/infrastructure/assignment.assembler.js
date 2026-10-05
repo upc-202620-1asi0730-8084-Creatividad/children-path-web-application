@@ -1,4 +1,4 @@
-import { Assignment } from '../domain/entities/assignment.entity.js';
+﻿import { Assignment } from '../domain/entities/assignment.entity.js';
 
 /**
  * Maps assignment resources from the API into Assignment domain entities.

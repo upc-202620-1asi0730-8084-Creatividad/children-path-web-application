@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Student entity within the Students bounded context.
  * Represents a student enrolled in the school transport service.
  *
@@ -54,7 +54,7 @@ export class Student {
     }
 
     get fullName() {
-        return `${this.firstName}${this.lastName}`.trim();
+        return `${this.firstName} ${this.lastName}`.trim();
     }
 
     get initials() {

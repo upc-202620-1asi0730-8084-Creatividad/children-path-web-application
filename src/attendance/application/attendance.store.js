@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+﻿import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { AttendanceApi } from '../infrastructure/attendance-api.js';
 import { AttendanceRecordAssembler } from '../infrastructure/attendance-record.assembler.js';
@@ -199,16 +199,19 @@ const useAttendanceStore = defineStore('attendance', () => {
     }
 
     return {
+        // state
         dashboard,
         loading,
         errors,
         selectedStatus,
         selectedRoute,
         searchTerm,
+        // computed
         records,
         summary,
         availableRoutes,
         filteredRecords,
+        // actions
         fetchDashboard,
         setStatus,
         setRoute,

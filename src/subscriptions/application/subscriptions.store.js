@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+﻿import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { SubscriptionsApi } from '../infrastructure/subscriptions-api.js';
 import { fallbackSubscriptions } from '../domain/models/subscription-dashboard.model.js';

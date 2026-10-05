@@ -1,4 +1,4 @@
-import { BaseApi } from '../../shared/infrastructure/base-api.js';
+﻿import { BaseApi } from '../../shared/infrastructure/base-api.js';
 
 const currentPath  = import.meta.env.VITE_SUBSCRIPTIONS_CURRENT_ENDPOINT_PATH;
 const plansPath    = import.meta.env.VITE_SUBSCRIPTIONS_PLANS_ENDPOINT_PATH;

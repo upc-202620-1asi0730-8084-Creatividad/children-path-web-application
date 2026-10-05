@@ -1,3 +1,4 @@
+﻿
 <script setup>
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -10,7 +11,7 @@ const emit = defineEmits(['view']);
 
 const { t } = useI18n();
 
-const fullName = computed(() => `${props.student.firstName}${props.student.lastName}`.trim());
+const fullName = computed(() => `${props.student.firstName} ${props.student.lastName}`.trim());
 const initials = computed(() =>
     `${props.student.firstName.charAt(0)}${props.student.lastName.charAt(0)}`.toUpperCase()
 );

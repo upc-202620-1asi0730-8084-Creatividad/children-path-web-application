@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 defineProps({
   icon: { type: String, required: true },
   label: { type: String, required: true },

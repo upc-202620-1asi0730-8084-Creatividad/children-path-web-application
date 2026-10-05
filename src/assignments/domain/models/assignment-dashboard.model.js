@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Aggregate representing the full Assignments dashboard view.
  *
  * @typedef {Object} AssignmentSummary

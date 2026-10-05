@@ -1,4 +1,4 @@
-/**
+﻿/**
  * SubscriptionPlan entity within the Subscriptions bounded context.
  *
  * @class SubscriptionPlan

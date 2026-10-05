@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Value object representing an assignment review.
  *
  * @typedef {Object} AssignmentReview

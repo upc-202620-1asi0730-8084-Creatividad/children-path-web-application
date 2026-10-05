@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+﻿import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { AnalyticsApi } from '../infrastructure/analytics-api.js';
 
@@ -126,6 +126,7 @@ const useAnalyticsStore = defineStore('analytics', () => {
             }
             errors.value = [];
         } catch (error) {
+            // Fallback silencioso al default
             dashboard.value = { ...defaultDashboard(), lastUpdated: new Date().toISOString() };
         }
     }
@@ -218,16 +219,19 @@ const useAnalyticsStore = defineStore('analytics', () => {
     }
 
     return {
+        // state
         dashboard,
         query,
         reportType,
         routeStatus,
         selectedRouteId,
         errors,
+        // computed
         summary,
         selectedRoute,
         filteredRoutes,
         filteredReports,
+        // actions
         refreshDashboard,
         selectRoute,
         setReportType,

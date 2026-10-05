@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Value object representing the aggregated metrics of trips.
  *
  * @typedef {Object} TripSummary

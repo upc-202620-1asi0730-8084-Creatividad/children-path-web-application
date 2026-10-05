@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 import { computed, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import useStudentsStore from '@/students/application/students.store.js';
@@ -21,11 +21,11 @@ const viewingStudent = ref(null);
 const kpis = computed(() => {
   const s = store.dashboard.summary;
   return [
-    { icon: 'school',          label: 'studentsPage.kpis.totalStudents',      value: s.totalStudents,               helper: 'studentsPage.kpis.totalStudentsHelper',      tone: 'blue' },
-    { icon: 'verified_user',   label: 'studentsPage.kpis.activeStudents',     value: s.activeStudents,              helper: 'studentsPage.kpis.activeStudentsHelper',     tone: 'green' },
-    { icon: 'route',           label: 'studentsPage.kpis.assignedStudents',   value: s.assignedStudents,            helper: 'studentsPage.kpis.assignedStudentsHelper',   tone: 'blue' },
-    { icon: 'warning',         label: 'studentsPage.kpis.unassignedStudents', value: s.unassignedStudents,          helper: 'studentsPage.kpis.unassignedStudentsHelper', tone: 'amber' },
-    { icon: 'family_restroom', label: 'studentsPage.kpis.guardianVerified',   value: `${s.guardianVerified}%`,      helper: 'studentsPage.kpis.guardianVerifiedHelper',   tone: 'blue' }
+    { icon: 'school',         label: 'studentsPage.kpis.totalStudents',      value: s.totalStudents,               helper: 'studentsPage.kpis.totalStudentsHelper',      tone: 'blue' },
+    { icon: 'verified_user',  label: 'studentsPage.kpis.activeStudents',     value: s.activeStudents,              helper: 'studentsPage.kpis.activeStudentsHelper',     tone: 'green' },
+    { icon: 'route',          label: 'studentsPage.kpis.assignedStudents',   value: s.assignedStudents,            helper: 'studentsPage.kpis.assignedStudentsHelper',   tone: 'blue' },
+    { icon: 'warning',        label: 'studentsPage.kpis.unassignedStudents', value: s.unassignedStudents,          helper: 'studentsPage.kpis.unassignedStudentsHelper', tone: 'amber' },
+    { icon: 'family_restroom',label: 'studentsPage.kpis.guardianVerified',   value: `${s.guardianVerified}%`,      helper: 'studentsPage.kpis.guardianVerifiedHelper',   tone: 'blue' }
   ];
 });
 

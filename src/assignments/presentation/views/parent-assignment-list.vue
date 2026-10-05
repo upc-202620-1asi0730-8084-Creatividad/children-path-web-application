@@ -1,13 +1,13 @@
-<script setup>
+﻿<script setup>
 import { computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import useAssignmentStore from '@/assignments/application/assignment.store.js';
+import useAssignmentStore from '@/application/assignment.store.js';
 import { authStore } from '@/iam/application/services/auth.service.js';
 
 const { t } = useI18n();
 const store = useAssignmentStore();
 
-const currentParentName = computed(() => authStore?.currentUser?.displayName ?? 'Parent');
+const currentParentName = computed(() => authStore.currentUser?.displayName ?? 'Parent');
 
 const myKidsAssignments = computed(() => {
   const parent = currentParentName.value;

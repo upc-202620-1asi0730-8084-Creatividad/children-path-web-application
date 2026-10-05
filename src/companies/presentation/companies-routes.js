@@ -1,4 +1,4 @@
-const companyManagement = () => import('./views/company-management.vue');
+﻿const companyManagement = () => import('./views/company-management.vue');
 
 const companiesRoutes = [
     {

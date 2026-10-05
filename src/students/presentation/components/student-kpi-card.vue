@@ -1,112 +1,61 @@
-<script setup>
-import { ref, watch } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { Student } from '@/students/domain/entities/student.entity.js';
-
-const props = defineProps({
-  visible: { type: Boolean, default: false },
-  data: { type: Object, default: null }
+﻿<script setup>
+defineProps({
+  icon: { type: String, required: true },
+  label: { type: String, required: true },
+  value: { type: [String, Number], required: true },
+  helper: { type: String, default: '' },
+  tone: { type: String, default: 'blue' }
 });
-
-const emit = defineEmits(['update:visible', 'save']);
-
-const { t } = useI18n();
-
-const statusOptions = ['active', 'unassigned', 'review', 'inactive'];
-
-const blank = () => ({
-  firstName: '', lastName: '', grade: '', school: '',
-  guardianName: '', guardianPhone: '', guardianEmail: '', emergencyContact: '',
-  routeName: '', pickupPoint: '', pickupWindow: '', status: 'unassigned'
-});
-
-const form = ref(blank());
-
-watch(() => props.visible, (visible) => {
-  if (visible) {
-    if (props.data) {
-      form.value = {
-        firstName: props.data.firstName,
-        lastName: props.data.lastName,
-        grade: props.data.grade,
-        school: props.data.school,
-        guardianName: props.data.guardianName,
-        guardianPhone: props.data.guardianPhone,
-        guardianEmail: props.data.guardianEmail,
-        emergencyContact: props.data.emergencyContact,
-        routeName: props.data.routeName ?? '',
-        pickupPoint: props.data.pickupPoint ?? '',
-        pickupWindow: props.data.pickupWindow ?? '',
-        status: props.data.status
-      };
-    } else {
-      form.value = blank();
-    }
-  }
-});
-
-function close() {
-  emit('update:visible', false);
-}
-
-function save() {
-  const hasRoute = Boolean(form.value.routeName);
-  const entity = new Student({
-    id: props.data?.id,
-    code: props.data?.code,
-    firstName: form.value.firstName.trim(),
-    lastName: form.value.lastName.trim(),
-    grade: form.value.grade.trim(),
-    school: form.value.school.trim(),
-    guardianName: form.value.guardianName.trim(),
-    guardianPhone: form.value.guardianPhone.trim(),
-    guardianEmail: form.value.guardianEmail.trim(),
-    emergencyContact: form.value.emergencyContact.trim(),
-    routeName: form.value.routeName.trim() || null,
-    pickupPoint: form.value.pickupPoint.trim() || null,
-    pickupWindow: form.value.pickupWindow.trim() || null,
-    status: hasRoute && form.value.status === 'unassigned' ? 'active' : form.value.status
-  });
-  emit('save', entity);
-  close();
-}
 </script>
 
 <template>
-  <pv-dialog
-      :visible="visible"
-      @update:visible="emit('update:visible', $event)"
-      :header="data ? t('studentsPage.dialogs.editTitle') : t('studentsPage.dialogs.registerTitle')"
-      modal
-      :style="{ width: '880px' }"
-  >
-    <div class="form-grid">
-      <label><span>{{ t('studentsPage.dialogs.firstName') }}</span><pv-input-text v-model="form.firstName" /></label>
-      <label><span>{{ t('studentsPage.dialogs.lastName') }}</span><pv-input-text v-model="form.lastName" /></label>
-      <label><span>{{ t('studentsPage.dialogs.grade') }}</span><pv-input-text v-model="form.grade" /></label>
-      <label><span>{{ t('studentsPage.dialogs.school') }}</span><pv-input-text v-model="form.school" /></label>
-      <label><span>{{ t('studentsPage.dialogs.guardianName') }}</span><pv-input-text v-model="form.guardianName" /></label>
-      <label><span>{{ t('studentsPage.dialogs.guardianPhone') }}</span><pv-input-text v-model="form.guardianPhone" /></label>
-      <label><span>{{ t('studentsPage.dialogs.guardianEmail') }}</span><pv-input-text v-model="form.guardianEmail" /></label>
-      <label><span>{{ t('studentsPage.dialogs.emergencyContact') }}</span><pv-input-text v-model="form.emergencyContact" /></label>
-      <label><span>{{ t('studentsPage.dialogs.route') }}</span><pv-input-text v-model="form.routeName" /></label>
-      <label><span>{{ t('studentsPage.dialogs.pickupPoint') }}</span><pv-input-text v-model="form.pickupPoint" /></label>
-      <label><span>{{ t('studentsPage.dialogs.pickupWindow') }}</span><pv-input-text v-model="form.pickupWindow" /></label>
-      <label><span>{{ t('studentsPage.dialogs.status') }}</span>
-        <pv-select v-model="form.status" :options="statusOptions" />
-      </label>
-    </div>
-
-    <template #footer>
-      <pv-button :label="t('studentsPage.dialogs.cancel')" text @click="close" />
-      <pv-button :label="data ? t('studentsPage.dialogs.save') : t('studentsPage.dialogs.register')" @click="save" />
-    </template>
-  </pv-dialog>
+  <article class="kpi-card" :class="tone">
+    <span class="icon-wrap">
+      <i class="material-symbols-outlined">{{ icon }}</i>
+    </span>
+    <small>{{ label }}</small>
+    <strong>{{ value }}</strong>
+    <p>{{ helper }}</p>
+  </article>
 </template>
 
 <style scoped>
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.form-grid label { display: grid; gap: 6px; }
-.form-grid label span { font-weight: 700; font-size: .85rem; color: var(--kw-muted); }
-@media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+.kpi-card {
+  position: relative;
+  min-height: 126px;
+  overflow: hidden;
+  border: 1px solid #dfeaf5;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(18, 65, 105, 0.08);
+  padding: 22px;
+}
+.kpi-card::after {
+  content: '';
+  position: absolute;
+  right: -26px;
+  bottom: -28px;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: rgba(33, 150, 220, 0.13);
+}
+.icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  color: #1b83c9;
+  background: #e4f3ff;
+  margin-bottom: 14px;
+}
+.kpi-card.green .icon-wrap { color: #0e9f6e; background: #dcfce7; }
+.kpi-card.amber .icon-wrap { color: #c27803; background: #fef3c7; }
+.kpi-card.red .icon-wrap { color: #dc2626; background: #fee2e2; }
+small { display: block; color: #5f7086; font-size: 0.85rem; font-weight: 700; }
+strong { display: block; margin-top: 4px; color: #0f172a; font-size: 2rem; line-height: 1; letter-spacing: -0.04em; }
+p { margin: 9px 0 0; color: #708197; font-size: 0.82rem; }
+.icon-wrap .material-symbols-outlined { font-size: 18px; }
 </style>

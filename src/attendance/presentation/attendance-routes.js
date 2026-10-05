@@ -1,4 +1,4 @@
-const attendanceManagement = () => import('./views/attendance-management.vue');
+﻿const attendanceManagement = () => import('./views/attendance-management.vue');
 
 const attendanceRoutes = [
     {

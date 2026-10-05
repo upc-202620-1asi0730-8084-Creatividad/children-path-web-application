@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Attendance record entity within the Attendance bounded context.
  * Tracks the current status of a student during a service day.
  *

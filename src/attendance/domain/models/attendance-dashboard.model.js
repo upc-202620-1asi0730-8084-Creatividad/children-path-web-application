@@ -1,4 +1,4 @@
-import { AttendanceRecord } from '../entities/attendance-record.entity.js';
+﻿import { AttendanceRecord } from '../entities/attendance-record.entity.js';
 
 /**
  * @typedef {Object} AttendanceDashboard

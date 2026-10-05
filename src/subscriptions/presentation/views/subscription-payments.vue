@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 import { computed, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import useSubscriptionsStore from '@/subscriptions/application/subscriptions.store.js';
@@ -25,20 +25,20 @@ const metrics = computed(() => {
     {
       icon: 'calendar_month',
       label: 'subscriptions.metrics.usingPlan',
-      value: `${store.serviceDays}${t('subscriptions.metrics.days')}`,
-      helper: `${t('subscriptions.metrics.started')}${formatDate(sub.startedOn ?? '2026-01-15')}`
+      value: `${store.serviceDays} ${t('subscriptions.metrics.days')}`,
+      helper: `${t('subscriptions.metrics.started')} ${formatDate(sub.startedOn ?? '2026-01-15')}`
     },
     {
       icon: 'event_repeat',
       label: 'subscriptions.metrics.nextCharge',
-      value: `${store.daysUntilRenewal}${t('subscriptions.metrics.days')}`,
+      value: `${store.daysUntilRenewal} ${t('subscriptions.metrics.days')}`,
       helper: t('subscriptions.renewal.' + (sub.renewalMode ?? 'assisted'))
     },
     {
       icon: 'receipt_long',
       label: 'subscriptions.metrics.lastPayment',
       value: store.lastPayment ? formatCurrency(store.lastPayment.amount, store.lastPayment.currency) : '—',
-      helper: store.lastPayment ? `${formatDate(store.lastPayment.date)} ·${t('subscriptions.status.' + store.lastPayment.status)}` : ''
+      helper: store.lastPayment ? `${formatDate(store.lastPayment.date)} · ${t('subscriptions.status.' + store.lastPayment.status)}` : ''
     },
     {
       icon: 'alternate_email',

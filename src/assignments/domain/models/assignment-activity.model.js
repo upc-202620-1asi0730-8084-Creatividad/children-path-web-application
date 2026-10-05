@@ -1,3 +1,4 @@
+﻿
 /**
  * Value object representing a timeline activity.
  *

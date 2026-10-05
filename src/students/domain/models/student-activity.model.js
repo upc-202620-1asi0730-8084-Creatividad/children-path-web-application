@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Value object representing a timeline activity.
  *
  * @typedef {Object} StudentActivity

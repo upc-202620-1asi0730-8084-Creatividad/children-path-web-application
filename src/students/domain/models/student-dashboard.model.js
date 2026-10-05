@@ -1,4 +1,4 @@
-import { Student } from '../entities/student.entity.js';
+﻿import { Student } from '../entities/student.entity.js';
 
 /**
  * @typedef {Object} StudentDashboard

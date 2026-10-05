@@ -1,4 +1,4 @@
-const analyticsView = () => import('./views/analytics-view.vue');
+﻿const analyticsView = () => import('./views/analytics-view.vue');
 
 const analyticsRoutes = [
     {

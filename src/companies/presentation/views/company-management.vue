@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 import { computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import useCompaniesStore from '@/companies/application/companies.store.js';
