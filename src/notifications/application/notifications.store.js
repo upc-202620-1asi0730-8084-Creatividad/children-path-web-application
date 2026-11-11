@@ -41,6 +41,15 @@ const useNotificationsStore = defineStore('notifications', () => {
             loading.value = false;
         }
     }
+    async function acknowledge(id) {
+        try {
+            await notificationsApi.resolveAlert(id);
+            updateItem(id, { status: 'acknowledged' });
+            console.log("Alerta resuelta en el backend correctamente");
+        } catch (error) {
+            console.error("Error al intentar resolver la alerta en el backend:", error);
+        }
+    }
 
     function filteredItems(category, priority, status, query) {
         const normalizedQuery = query.trim().toLowerCase();
@@ -54,12 +63,14 @@ const useNotificationsStore = defineStore('notifications', () => {
         });
     }
 
-    function markAsRead(id) {
-        updateItem(id, { status: 'read' });
-    }
-
-    function acknowledge(id) {
-        updateItem(id, { status: 'acknowledged' });
+    async function markAsRead(id) {
+        try {
+            await notificationsApi.markAlertAsRead(id);
+            updateItem(id, { status: 'read' });
+            console.log(`Alerta ${id} marcada como leída.`);
+        } catch (error) {
+            console.error("Error al marcar como leída:", error);
+        }
     }
 
     function markAllAsRead() {
