@@ -12,6 +12,31 @@
  * Fallback dashboard used when the API is unavailable.
  * @returns {TripDashboard}
  */
+/**
+ * Empty initial state before backend fetch completes.
+ */
+export function emptyTripsDashboard() {
+    return {
+        summary: {
+            totalTrips: 0,
+            activeTrips: 0,
+            scheduledTrips: 0,
+            delayedTrips: 0,
+            completedTrips: 0,
+            serviceReliability: 100
+        },
+        trips: [],
+        reviews: [],
+        activities: []
+    };
+}
+
+/**
+ * Fallback dashboard used when the API is unavailable.
+ */
+export function fallbackTrips() {
+    return emptyTripsDashboard();
+}
 export function fallbackTrips() {
     return {
         summary: {

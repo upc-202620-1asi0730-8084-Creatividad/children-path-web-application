@@ -1,7 +1,7 @@
 ﻿import { BaseApi } from '../../shared/infrastructure/base-api.js';
 
-const dashboardPath = import.meta.env.VITE_TRIPS_DASHBOARD_ENDPOINT_PATH;
-const recordsPath   = import.meta.env.VITE_TRIPS_RECORDS_ENDPOINT_PATH;
+const tripsPath = import.meta.env.VITE_TRIPS_ENDPOINT_PATH || '/Trips';
+const dashboardPath = import.meta.env.VITE_TRIPS_DASHBOARD_ENDPOINT_PATH || '/tripDashboard';
 
 /**
  * Infrastructure gateway for Trips bounded-context endpoints.
@@ -15,18 +15,25 @@ export class TripsApi extends BaseApi {
     }
 
     getRecords() {
-        return this.http.get(recordsPath);
+        return this.http.get(tripsPath);
     }
 
     createTrip(resource) {
-        return this.http.post(recordsPath, resource);
+        return this.http.post(tripsPath, resource);
     }
 
-    updateTrip(id, resource) {
-        return this.http.put(`${recordsPath}/${id}`, resource);
+    startTrip(id) {
+        const numericId = typeof id === 'string' ? parseInt(id.replace(/\D/g, ''), 10) : id;
+        return this.http.patch(`${tripsPath}/${numericId}/start`, {});
     }
 
-    deleteTrip(id) {
-        return this.http.delete(`${recordsPath}/${id}`);
+    completeTrip(id) {
+        const numericId = typeof id === 'string' ? parseInt(id.replace(/\D/g, ''), 10) : id;
+        return this.http.patch(`${tripsPath}/${numericId}/complete`, {});
+    }
+
+    cancelTrip(id) {
+        const numericId = typeof id === 'string' ? parseInt(id.replace(/\D/g, ''), 10) : id;
+        return this.http.patch(`${tripsPath}/${numericId}/cancel`, {});
     }
 }
