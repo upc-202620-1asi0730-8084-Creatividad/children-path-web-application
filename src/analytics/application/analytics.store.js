@@ -145,32 +145,16 @@ const useAnalyticsStore = defineStore('analytics', () => {
         if (firstRoute) selectRoute(firstRoute.id);
     }
 
-    function generateReport() {
-        const nextReport = {
-            id: `rep-${Date.now()}`,
-            type: 'service_quality',
-            title: 'Service quality snapshot',
-            period: 'Current operational day',
-            generatedAt: new Date().toISOString(),
-            owner: 'Company Admin',
-            status: 'ready',
-            records: dashboard.value.routes.length
-        };
+    async function generateReport() {
+        try {
+            const response = await analyticsApi.createReport('Performance', 'Current operational day');
+            const createdReport = response.data;
 
-        const nextActivity = {
-            id: `act-${Date.now()}`,
-            time: new Date().toISOString(),
-            title: 'Analytics report generated',
-            description: 'A service quality report was generated from current monitoring indicators.',
-            status: 'healthy'
-        };
+            await refreshDashboard();
 
-        dashboard.value = {
-            ...dashboard.value,
-            reports: [nextReport, ...dashboard.value.reports],
-            activities: [nextActivity, ...dashboard.value.activities],
-            lastUpdated: new Date().toISOString()
-        };
+        } catch (error) {
+            console.error("Error al generar reporte:", error);
+        }
     }
 
     function exportCsv() {
