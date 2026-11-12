@@ -1,14 +1,60 @@
 ﻿import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { TripsApi } from '../infrastructure/trips-api.js';
-import { fallbackTrips } from '../domain/models/trip-dashboard.model.js';
+import { emptyTripsDashboard } from '../domain/models/trip-dashboard.model.js';
 import { Trip } from '../domain/entities/trip.entity.js';
 
 const tripsApi = new TripsApi();
 
+function mapBackendStatus(status) {
+    const normalized = String(status || 'scheduled').toLowerCase();
+    if (normalized === 'inprogress' || normalized === 'in_progress') return 'in_progress';
+    if (normalized === 'cancelled' || normalized === 'canceled') return 'canceled';
+    return normalized;
+}
+
+function toTripEntity(item) {
+    const status = mapBackendStatus(item.status);
+    const stops = Array.isArray(item.stops) ? item.stops : [];
+    const totalStops = item.totalStops ?? (stops.length || 8);
+    const completedStops = item.completedStops ?? (status === 'completed' ? totalStops : stops.filter(s => s.status === 'reached').length);
+    const progress = item.progress ?? (status === 'completed' ? 100 : status === 'in_progress' ? 45 : status === 'delayed' ? 35 : 0);
+
+    return new Trip({
+        id: item.id,
+        code: item.code || `TP-${String(item.id ?? 1).padStart(3, '0')}`,
+        routeName: item.routeName,
+        vehiclePlate: item.vehiclePlate,
+        driverName: item.driverName,
+        school: item.school,
+        district: item.district,
+        shift: String(item.shift || 'morning').toLowerCase(),
+        status,
+        students: item.students ?? 0,
+        capacity: item.capacity ?? 18,
+        startTime: item.startTime,
+        estimatedEndTime: item.estimatedEndTime,
+        actualEndTime: status === 'completed' ? item.estimatedEndTime : null,
+        nextStop: item.nextStop || (stops[0]?.name ?? 'Main Station'),
+        completedStops,
+        totalStops,
+        progress,
+        averageSpeed: item.averageSpeed ?? (status === 'scheduled' ? 0 : 30),
+        attendanceRate: item.attendanceRate ?? (status === 'scheduled' ? 0 : 96),
+        incidents: item.incidents ?? (status === 'delayed' ? 1 : 0),
+        trackingStatus: status === 'completed' ? 'closed' : status === 'canceled' ? 'blocked' : status === 'scheduled' ? 'ready' : 'enabled',
+        validationMessage: status === 'completed'
+            ? 'Trip completed and operation history stored.'
+            : status === 'in_progress'
+                ? 'Trip started and live tracking enabled.'
+                : 'Trip registered in backend.',
+        updatedAt: 'Today'
+    });
+}
+
 const useTripsStore = defineStore('trips', () => {
     // ---- State ----
-    const dashboard = ref(fallbackTrips());
+    const dashboard = ref(emptyTripsDashboard());
     const loading = ref(false);
     const errors = ref([]);
 
@@ -44,11 +90,20 @@ const useTripsStore = defineStore('trips', () => {
     async function fetchDashboard() {
         loading.value = true;
         try {
-            const response = await tripsApi.getDashboard();
-            dashboard.value = response.data;
+            const response = await tripsApi.getRecords();
+            const rawTrips = Array.isArray(response.data)
+                ? response.data
+                : (response.data?.trips ?? []);
+
+            const mappedTrips = rawTrips.map(toTripEntity);
+            setTrips(mappedTrips);
+
+            if (mappedTrips.length > 0 && dashboard.value.activities.length === 0) {
+                pushActivity('Backend synchronized', `${mappedTrips.length} trips loaded from backend API.`, 'completed');
+            }
             errors.value = [];
         } catch (error) {
-            dashboard.value = fallbackTrips();
+            console.error('Error fetching trips from backend:', error);
             errors.value.push(error);
         } finally {
             loading.value = false;
@@ -69,69 +124,95 @@ const useTripsStore = defineStore('trips', () => {
 
     async function createTrip(entity) {
         try {
-            const response = await tripsApi.createTrip(entity);
-            const created = new Trip({ ...response.data });
+            const generatedCode = entity.code && entity.code.trim() !== ''
+                ? entity.code
+                : `TP-${String(trips.value.length + 1).padStart(3, '0')}`;
+
+            const payload = {
+                code: generatedCode,
+                routeName: entity.routeName,
+                vehiclePlate: entity.vehiclePlate,
+                driverName: entity.driverName,
+                school: entity.school,
+                district: entity.district,
+                shift: entity.shift || 'morning',
+                startTime: entity.startTime || '06:45',
+                estimatedEndTime: entity.estimatedEndTime || '07:45',
+                capacity: Number(entity.capacity) || 18
+            };
+
+            const response = await tripsApi.createTrip(payload);
+            const created = toTripEntity({
+                ...entity,
+                ...response.data
+            });
+
             setTrips([created, ...trips.value]);
-            pushActivity('Trip scheduled', `${created.routeName} was added to the daily operation.`, 'pending');
+            pushActivity('Trip scheduled', `${created.routeName} was saved in backend.`, 'pending');
             return created;
         } catch (error) {
-            setTrips([entity, ...trips.value]);
-            pushActivity('Trip scheduled', `${entity.routeName} was added to the daily operation.`, 'pending');
+            console.error('Error creating trip in backend:', error);
             errors.value.push(error);
-            return entity;
+            throw error;
         }
     }
 
     async function updateTrip(entity, activityTitle = 'Trip updated', activityDescription = null, activityStatus = 'completed') {
+        const updated = new Trip({ ...entity, updatedAt: 'Now' });
+        setTrips(trips.value.map((t) => (t.id === updated.id ? updated : t)));
+        pushActivity(activityTitle, activityDescription ?? `${updated.routeName} was updated.`, activityStatus);
+        return updated;
+    }
+
+    async function startTrip(trip) {
         try {
-            const response = await tripsApi.updateTrip(entity.id, entity);
-            const updated = new Trip({ ...response.data });
-            setTrips(trips.value.map((t) => (t.id === updated.id ? updated : t)));
-            pushActivity(activityTitle, activityDescription ?? `${updated.routeName} was updated.`, activityStatus);
+            const response = await tripsApi.startTrip(trip.id);
+            const updated = toTripEntity({
+                ...trip,
+                ...response.data,
+                progress: Math.max(trip.progress, 20)
+            });
+            setTrips(trips.value.map((t) => (t.id === trip.id ? updated : t)));
+            pushActivity('Trip started', `${trip.routeName} started with vehicle ${trip.vehiclePlate}.`, 'active');
             return updated;
         } catch (error) {
-            setTrips(trips.value.map((t) => (t.id === entity.id ? entity : t)));
-            pushActivity(activityTitle, activityDescription ?? `${entity.routeName} was updated.`, activityStatus);
+            console.error('Error starting trip in backend:', error);
             errors.value.push(error);
-            return entity;
         }
     }
 
-    function startTrip(trip) {
-        const updated = new Trip({
-            ...trip,
-            status: 'in_progress',
-            progress: Math.max(trip.progress, 8),
-            trackingStatus: 'enabled',
-            validationMessage: 'Trip started and live tracking enabled.',
-            updatedAt: 'Now'
-        });
-        return updateTrip(updated, 'Trip started', `${trip.routeName} started with vehicle ${trip.vehiclePlate}.`, 'active');
+    async function completeTrip(trip) {
+        try {
+            const response = await tripsApi.completeTrip(trip.id);
+            const updated = toTripEntity({
+                ...trip,
+                ...response.data,
+                progress: 100,
+                completedStops: trip.totalStops
+            });
+            setTrips(trips.value.map((t) => (t.id === trip.id ? updated : t)));
+            pushActivity('Trip completed', `${trip.routeName} was completed in backend.`, 'completed');
+            return updated;
+        } catch (error) {
+            console.error('Error completing trip in backend:', error);
+            errors.value.push(error);
+        }
     }
 
-    function completeTrip(trip) {
-        const updated = new Trip({
-            ...trip,
-            status: 'completed',
-            progress: 100,
-            completedStops: trip.totalStops,
-            actualEndTime: trip.estimatedEndTime,
-            trackingStatus: 'closed',
-            validationMessage: 'Trip completed and operation history stored.',
-            updatedAt: 'Now'
-        });
-        return updateTrip(updated, 'Trip completed', `${trip.routeName} was completed and tracking session was closed.`, 'completed');
-    }
-
-    function cancelTrip(trip) {
-        const updated = new Trip({
-            ...trip,
-            status: 'canceled',
-            trackingStatus: 'blocked',
-            validationMessage: 'Trip canceled and attendance records blocked.',
-            updatedAt: 'Now'
-        });
-        return updateTrip(updated, 'Trip canceled', `${trip.routeName} was canceled before completion.`, 'pending');
+    async function cancelTrip(trip) {
+        try {
+            const response = await tripsApi.cancelTrip(trip.id);
+            const updated = toTripEntity({
+                ...trip,
+                ...response.data
+            });
+            setTrips(trips.value.map((t) => (t.id === trip.id ? updated : t)));
+            pushActivity('Trip canceled', `${trip.routeName} was canceled in backend.`, 'pending');
+            return updated;
+        } catch (error) {
+            console.error('Error canceling trip in backend:', error);
+            errors.value.push(error);
+        }
     }
 
     function setTrips(list) {
@@ -165,7 +246,7 @@ const useTripsStore = defineStore('trips', () => {
         const delayedTrips = list.filter((t) => t.status === 'delayed').length;
         const completedTrips = list.filter((t) => t.status === 'completed').length;
         const reliableTrips = list.filter((t) => t.status !== 'delayed' && t.status !== 'canceled').length;
-        const serviceReliability = totalTrips ? Math.round((reliableTrips / totalTrips) * 100) : 0;
+        const serviceReliability = totalTrips ? Math.round((reliableTrips / totalTrips) * 100) : 100;
 
         return {
             totalTrips,
@@ -219,20 +300,17 @@ const useTripsStore = defineStore('trips', () => {
     }
 
     return {
-        // state
         dashboard,
         loading,
         errors,
         searchTerm,
         selectedStatus,
         selectedShift,
-        // computed
         trips,
         summary,
         reviews,
         activities,
         filteredTrips,
-        // actions
         fetchDashboard,
         setSearchTerm,
         setStatus,
