@@ -1,4 +1,4 @@
-﻿/**
+﻿    /**
  * Domain models for the Companies bounded context.
  *
  * @typedef {'active'|'review'|'pending'|'suspended'} CompanyStatus
