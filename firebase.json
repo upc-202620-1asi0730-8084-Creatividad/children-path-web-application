@@ -2,15 +2,16 @@
   "hosting": {
     "site": "children-path-4d5c3",
     "public": "dist",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
       }
-    ],
-    "frameworksBackend": {
-      "region": "us-central1"
-    }
+    ]
   }
 }
