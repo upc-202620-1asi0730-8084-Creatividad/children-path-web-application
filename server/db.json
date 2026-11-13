@@ -1,0 +1,148 @@
+﻿{
+  "users": [
+    { "id": 1, "username": "admin", "password": "admin", "role": "Children Path Administrator" },
+    { "id": 2, "username": "driver", "password": "driver", "role": "Company Driver" },
+    { "id": 3, "username": "parent", "password": "parent", "role": "Parent / Guardian" }
+  ],
+  "companies": [
+    { "id": 1, "name": "Transportes Escolares Lima SAC", "ruc": "20123456789" }
+  ],
+  "fleet": [
+    { "id": 1, "plate": "ABC-123", "model": "Mercedes Sprinter", "capacity": 15, "companyId": 1 }
+  ],
+  "fleetSummary": {
+    "totalVehicles": 25,
+    "availableVehicles": 22,
+    "onRouteVehicles": 12,
+    "maintenanceVehicles": 3,
+    "averageAvailability": 88,
+    "averageCapacityUsage": 83
+  },
+
+  "fleetVehicles": [
+    {
+      "id": "veh-kw-204",
+      "plate": "KW-204",
+      "code": "KW-204",
+      "brand": "Hyundai",
+      "model": "H1 School Van",
+      "year": 2022,
+      "capacity": 18,
+      "assignedStudents": 16,
+      "driverName": "Carlos Pérez",
+      "routeName": "Miraflores School Route",
+      "status": "onRoute",
+      "energyType": "diesel",
+      "ownershipType": "company",
+      "nextMaintenanceDate": "2026-07-18",
+      "lastInspectionDate": "2026-05-28",
+      "mileageKm": 48320,
+      "availabilityScore": 92,
+      "documentsValid": true
+    },
+    {
+      "id": "veh-kw-118",
+      "plate": "KW-118",
+      "code": "KW-118",
+      "brand": "Toyota",
+      "model": "Hiace",
+      "year": 2021,
+      "capacity": 15,
+      "assignedStudents": 13,
+      "driverName": "María Gómez",
+      "routeName": "San Isidro Morning Route",
+      "status": "available",
+      "energyType": "gasoline",
+      "ownershipType": "company",
+      "nextMaintenanceDate": "2026-08-05",
+      "lastInspectionDate": "2026-06-01",
+      "mileageKm": 39210,
+      "availabilityScore": 96,
+      "documentsValid": true
+    },
+    {
+      "id": "veh-kw-076",
+      "plate": "KW-076",
+      "code": "KW-076",
+      "brand": "Mercedes-Benz",
+      "model": "Sprinter",
+      "year": 2020,
+      "capacity": 22,
+      "assignedStudents": 20,
+      "driverName": "Luis Torres",
+      "routeName": "Surco Pickup Route",
+      "status": "maintenance",
+      "energyType": "diesel",
+      "ownershipType": "company",
+      "nextMaintenanceDate": "2026-07-08",
+      "lastInspectionDate": "2026-05-19",
+      "mileageKm": 58740,
+      "availabilityScore": 74,
+      "documentsValid": false
+    },
+    {
+      "id": "veh-kw-311",
+      "plate": "KW-311",
+      "code": "KW-311",
+      "brand": "Nissan",
+      "model": "Urvan",
+      "year": 2023,
+      "capacity": 17,
+      "assignedStudents": 11,
+      "driverName": "Andrea Rojas",
+      "routeName": "La Molina Afternoon Route",
+      "status": "available",
+      "energyType": "gasoline",
+      "ownershipType": "company",
+      "nextMaintenanceDate": "2026-09-11",
+      "lastInspectionDate": "2026-06-05",
+      "mileageKm": 25480,
+      "availabilityScore": 98,
+      "documentsValid": true
+    }
+  ],
+  "fleetMaintenanceAlerts": [
+    {
+      "id": "maint-001",
+      "vehicleCode": "KW-076",
+      "plate": "KW-076",
+      "title": "Technical inspection pending",
+      "dueDate": "2026-07-08",
+      "priority": "high",
+      "description": "Document validation is required before assigning this unit to a new route."
+    },
+    {
+      "id": "maint-002",
+      "vehicleCode": "KW-204",
+      "plate": "KW-204",
+      "title": "Preventive maintenance scheduled",
+      "dueDate": "2026-07-18",
+      "priority": "medium",
+      "description": "Oil change and brake review should be confirmed this month."
+    }
+  ],
+  "routes": [
+    { "id": 1, "name": "Ruta Norte", "startTime": "06:30", "endTime": "07:30", "driverId": 2 }
+  ],
+  "students": [
+    { "id": 1, "firstName": "Sofía", "lastName": "Gonzales", "grade": "3° Primaria", "parentId": 3 }
+  ],
+  "trips": [],
+  "attendance": [],
+  "notifications": [],
+  "incidents": [],
+  "dashboardViews": [
+    {
+      "role": "company",
+      "titleKey": "dashboardPage.roles.company.title",
+      "subtitleKey": "dashboardPage.roles.company.subtitle",
+      "heroValue": "96.8%",
+      "heroLabelKey": "dashboardPage.hero.company",
+      "metrics": [],
+      "vehicles": [],
+      "alerts": [],
+      "operationItems": [],
+      "activities": []
+    }
+  ]
+}

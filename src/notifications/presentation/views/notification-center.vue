@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 import { computed, onMounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import useNotificationsStore from '@/notifications/application/notifications.store.js';
@@ -11,7 +11,6 @@ const query = ref('');
 const category = ref('all');
 const priority = ref('all');
 const status = ref('all');
-const selected = ref(null);
 
 const filteredItems = computed(() =>
     store.filteredItems(category.value, priority.value, status.value, query.value)
@@ -50,8 +49,16 @@ function setStatus(value) {
   status.value = value;
 }
 
+const selectedId = ref(null);
+
+const selected = computed(() => {
+  return filteredItems.value.find(item => item.id === selectedId.value)
+      || filteredItems.value[0]
+      || null;
+});
+
 function select(item) {
-  selected.value = item;
+  selectedId.value = item.id;
 }
 
 function markRead(item, event) {
@@ -72,14 +79,6 @@ function removeItem(item, event) {
 function exportCurrent() {
   store.exportCsv(filteredItems.value);
 }
-
-// Auto-select first filtered item
-watch(filteredItems, (newList) => {
-  const currentId = selected.value?.id;
-  if (!currentId || !newList.some((i) => i.id === currentId)) {
-    selected.value = newList[0] ?? null;
-  }
-}, { immediate: true });
 
 onMounted(() => {
   store.fetchDashboard();

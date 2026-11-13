@@ -1,0 +1,49 @@
+﻿<script setup>
+import { RouterView } from "vue-router";
+import Sidebar from "@/shared/presentation/components/sidebar.vue";
+import Topbar from "@/shared/presentation/components/topbar.vue";
+import { sidebarStateStore } from "@/shared/application/services/sidebar-state.service.js";
+</script>
+
+<template>
+  <div
+      class="shell"
+      :class="{
+      'sidebar-collapsed': sidebarStateStore.collapsed,
+      'mobile-open': sidebarStateStore.mobileOpen
+    }"
+  >
+    <Sidebar />
+    <div class="backdrop" @click="sidebarStateStore.closeMobile()" aria-hidden="true" />
+    <section class="workspace">
+      <Topbar />
+      <main class="content" id="main-content">
+        <RouterView />
+      </main>
+    </section>
+  </div>
+</template>
+
+<style scoped>
+.shell { min-height: 100vh; display: flex; }
+.workspace {
+  flex: 1; min-width: 0;
+  padding-left: var(--sidebar-width);
+  transition: padding-left .25s ease;
+}
+.content {
+  padding: calc(var(--topbar-height) + 28px) 32px 42px;
+  min-height: 100vh;
+}
+.shell.sidebar-collapsed .workspace { padding-left: 92px; }
+.backdrop { display: none; }
+@media (max-width: 900px) {
+  .workspace { padding-left: 0; }
+  .content { padding: calc(var(--topbar-height) + 18px) 16px 28px; }
+  .backdrop {
+    display: none; position: fixed; inset: 0;
+    background: rgba(4, 14, 29, .48); z-index: 20;
+  }
+  .shell.mobile-open .backdrop { display: block; }
+}
+</style>
