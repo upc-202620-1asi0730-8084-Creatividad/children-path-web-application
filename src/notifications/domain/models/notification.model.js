@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Domain models for the Notifications bounded context.
  *
  * @typedef {'alert'|'notification'} NotificationCategory

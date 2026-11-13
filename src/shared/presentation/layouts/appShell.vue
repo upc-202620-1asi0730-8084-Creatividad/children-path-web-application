@@ -1,32 +1,24 @@
 ﻿<script setup>
-import {RouterView} from "vue-router";
+import { RouterView } from "vue-router";
 import Sidebar from "@/shared/presentation/components/sidebar.vue";
 import Topbar from "@/shared/presentation/components/topbar.vue";
-import {sidebarStateStore} from "@/shared/application/services/sidebar-state.service.js";
-
-/**
- * Application shell that arranges the sidebar, topbar and routed content.
- *
- * @remarks
- * Reads sidebar collapse/mobile-open state from the shared store and applies
- * layout classes accordingly.
- */
+import { sidebarStateStore } from "@/shared/application/services/sidebar-state.service.js";
 </script>
 
 <template>
   <div
       class="shell"
       :class="{
-        'sidebar-collapsed': sidebarStateStore.collapsed,
-        'mobile-open': sidebarStateStore.mobileOpen
-      }"
+      'sidebar-collapsed': sidebarStateStore.collapsed,
+      'mobile-open': sidebarStateStore.mobileOpen
+    }"
   >
-    <sidebar/>
-    <div class="backdrop" @click="sidebarStateStore.closeMobile()" aria-hidden="true"/>
+    <Sidebar />
+    <div class="backdrop" @click="sidebarStateStore.closeMobile()" aria-hidden="true" />
     <section class="workspace">
-      <topbar/>
+      <Topbar />
       <main class="content" id="main-content">
-        <router-view/>
+        <RouterView />
       </main>
     </section>
   </div>
@@ -45,15 +37,12 @@ import {sidebarStateStore} from "@/shared/application/services/sidebar-state.ser
 }
 .shell.sidebar-collapsed .workspace { padding-left: 92px; }
 .backdrop { display: none; }
-
 @media (max-width: 900px) {
   .workspace { padding-left: 0; }
   .content { padding: calc(var(--topbar-height) + 18px) 16px 28px; }
   .backdrop {
-    display: none;
-    position: fixed; inset: 0;
-    background: rgba(4, 14, 29, .48);
-    z-index: 20;
+    display: none; position: fixed; inset: 0;
+    background: rgba(4, 14, 29, .48); z-index: 20;
   }
   .shell.mobile-open .backdrop { display: block; }
 }

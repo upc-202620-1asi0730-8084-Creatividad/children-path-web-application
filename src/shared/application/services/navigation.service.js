@@ -1,5 +1,4 @@
 ﻿import {reactive} from "vue";
-import {authStore} from "@/identity-access/application/services/auth.service.js";
 
 /**
  * Application service that exposes the navigation menu for the authenticated user.
@@ -43,11 +42,17 @@ export const navigationStore = reactive({
     items: navigationItems,
 
     /**
-     * Returns the navigation items that the current user is allowed to see.
+     * Returns the navigation items visible to the current user.
+     *
+     * @remarks
+     * TODO: cuando exista IAM real, filtrar por `authStore.hasAnyRole(item.roles)`.
+     * Por ahora solo se devuelve todos los items porque no hay backend ni roles.
      *
      * @returns {import('@/shared/domain/model/navigation-item.model.js').NavigationItem[]}
      */
     visibleItems() {
-        return this.items.filter(item => authStore.hasAnyRole(item.roles));
+        return this.items;
+        // Cuando exista IAM:
+        // return this.items.filter(item => authStore.hasAnyRole(item.roles));
     }
 });
