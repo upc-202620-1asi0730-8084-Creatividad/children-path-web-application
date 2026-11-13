@@ -1,0 +1,30 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "develop",
+    "feature/analytics",
+    "feature/assignments",
+    "feature/attendance",
+    "feature/companies",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "develop": "main",
+    "feature/analytics": "main",
+    "feature/assignments": "main",
+    "feature/attendance": "main",
+    "feature/companies": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "develop",
+    "feature/analytics",
+    "feature/assignments",
+    "feature/attendance",
+    "feature/companies",
+    "origin"
+  ]
+}

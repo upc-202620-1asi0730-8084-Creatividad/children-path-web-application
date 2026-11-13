@@ -1,0 +1,49 @@
+﻿interface ImportMetaEnv {
+    readonly VITE_CHILDREN_PATH_API_URL: string;
+    readonly VITE_USERS_ENDPOINT_PATH: string;
+    readonly VITE_SIGNUP_ENDPOINT_PATH: string;
+    readonly VITE_SIGNIN_ENDPOINT_PATH: string;
+    readonly VITE_COMPANIES_ENDPOINT_PATH: string;
+    readonly VITE_FLEET_ENDPOINT_PATH: string;
+    readonly VITE_ROUTES_ENDPOINT_PATH: string;
+    readonly VITE_STUDENTS_ENDPOINT_PATH: string;
+    readonly VITE_TRIPS_ENDPOINT_PATH: string;
+    readonly VITE_ATTENDANCE_ENDPOINT_PATH: string;
+    readonly VITE_NOTIFICATIONS_ENDPOINT_PATH: string;
+    readonly VITE_INCIDENTS_ENDPOINT_PATH: string;
+    readonly VITE_PRIME_UI_LICENSE_KEY: string;
+    readonly VITE_FLEET_SUMMARY_ENDPOINT_PATH: string;
+    readonly VITE_FLEET_VEHICLES_ENDPOINT_PATH: string;
+    readonly VITE_FLEET_MAINTENANCE_ALERTS_ENDPOINT_PATH: string;
+    readonly VITE_ANALYTICS_DASHBOARD_ENDPOINT_PATH: string;
+    readonly VITE_ASSIGNMENT_DASHBOARD_ENDPOINT_PATH: string;
+    readonly VITE_ASSIGNMENT_RECORDS_ENDPOINT_PATH: string;
+    readonly VITE_COMPANIES_DASHBOARD_ENDPOINT_PATH: string;
+    readonly VITE_DASHBOARD_VIEWS_ENDPOINT_PATH: string;
+    readonly VITE_DRIVERS_SUMMARY_ENDPOINT_PATH: string;
+    readonly VITE_DRIVERS_ENDPOINT_PATH: string;
+    readonly VITE_DRIVERS_REVIEWS_ENDPOINT_PATH: string;
+    readonly VITE_DRIVERS_SHIFTS_ENDPOINT_PATH: string;
+    readonly VITE_INCIDENTS_DASHBOARD_ENDPOINT_PATH: string;
+    readonly VITE_NOTIFICATIONS_DASHBOARD_ENDPOINT_PATH: string;
+    readonly VITE_STUDENTS_SUMMARY_ENDPOINT_PATH: string;
+    readonly VITE_STUDENTS_RECORDS_ENDPOINT_PATH: string;
+    readonly VITE_STUDENTS_REVIEWS_ENDPOINT_PATH: string;
+    readonly VITE_STUDENTS_ACTIVITIES_ENDPOINT_PATH: string;
+    readonly VITE_SUBSCRIPTIONS_CURRENT_ENDPOINT_PATH: string;
+    readonly VITE_SUBSCRIPTIONS_PLANS_ENDPOINT_PATH: string;
+    readonly VITE_SUBSCRIPTIONS_PAYMENTS_ENDPOINT_PATH: string;
+    readonly VITE_SUBSCRIPTIONS_BILLING_ENDPOINT_PATH: string;
+    readonly VITE_TRACKING_DASHBOARD_ENDPOINT_PATH: string;
+    readonly VITE_TRIPS_DASHBOARD_ENDPOINT_PATH: string;
+    readonly VITE_TRIPS_RECORDS_ENDPOINT_PATH: string;
+    readonly VITE_ROUTES_SUMMARY_ENDPOINT_PATH: string;
+    readonly VITE_ROUTES_SCHOOL_ROUTES_ENDPOINT_PATH: string;
+    readonly VITE_ROUTES_REVIEWS_ENDPOINT_PATH: string;
+    readonly VITE_ROUTES_ACTIVITIES_ENDPOINT_PATH: string;
+    readonly VITE_CARTO_API_KEY: string;
+}
+
+interface ImportMeta {
+    readonly env: ImportMetaEnv;
+}
